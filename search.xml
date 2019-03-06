@@ -3,46 +3,98 @@
   
     
     <entry>
-      <title>say something</title>
-      <link href="/2019/03/05/say-something/"/>
-      <url>/2019/03/05/say-something/</url>
+      <title>好分期</title>
+      <link href="/2019/03/06/haofenqi/"/>
+      <url>/2019/03/06/haofenqi/</url>
       
-        <content type="html"><![CDATA[<p> I will be</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="好分期后台管理iOS端维护要点总结："><a href="#好分期后台管理iOS端维护要点总结：" class="headerlink" title="好分期后台管理iOS端维护要点总结："></a>好分期后台管理iOS端维护要点总结：</h1><p>项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下</p><p>好分期后台管理iOS端开发总结：<br><strong>标准化开发，明确你每句代码的意图</strong></p><p>在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也不一定是每句代码都 要说明 点什么，除非你是新手第一次接手项目。另外发现几个稍微有点欠妥的地方，一是把网络请求接口直接写在项目代码里面不分层虽然方便了，但是后台如果要统一改接口名称 要一个个去找，不是很方便 。二是搜索这个控件在取消的时候并没进行重新请求（已经修改）。界面全部采用TableView作为基础在Cell上布局控件，这种做法让我耳目一新，但是模块化的效果好很明显。不过重复控件太多，有些可以通过Cell重用实现的。还有就是在加载的时候如果网络出现问题，用户只能等待，这样的体验不是很好，这点也是我以后写代码要注意的地方。这款App主要的功能作用是显示数据，复杂的计算和操作后台都处理好了，所以项目并不算大。维护起来也很轻松</p><p><strong>键盘弹出界面自动移动防止遮挡</strong></p><pre><code>///IQKeyboardManager:自动处理键盘事件的第三方库​    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];​    manager.enable = YES;//控制整个功能是否启用​    manager.shouldResignOnTouchOutside = YES;//控制点击背景是否收起键盘​    manager.shouldToolbarUsesTextFieldTintColor = YES;//控制键盘上的工具条文字颜色是否用户自定义​    manager.enableAutoToolbar = NO;//控制是否显示键盘上的工具条​    manager.preventShowingBottomBlankSpace = NO;//防止IQKeyboardManager让rootview上滑过度,默认是YES</code></pre><p><strong>IPS**</strong>不用第三方可以手动进行采取上传到服务器，用于点对点推送：** </p><p>  //注册UserNotification,以获取推送通知的权限</p><pre><code>​    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];​    [application registerUserNotificationSettings:settings];​    //注册远程推送​    [application registerForRemoteNotifications];​    ​    // Override point for customization after application launch.​    return YES;}– (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {//处理推送消息​    NSLog(@”userinfo：%@”, userInfo);​    NSLog(@”收到推送消息：%@”, [[userInfo objectForKey:@”aps”] objectForKey:@”alert”]);}///如果注册失败，比如没有证书等等调用– (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {​    NSLog(@”远程通知注册失败：%@”, error);}///用户同意后，会调用此程序，获取系统的deviceToken，应把deviceToken传给服务器保存，此函数会在程序每次启动时调用(前提是用户允许通知)– (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {​    //NSLog(@”获取到的Token值为：%@”, deviceToken);​    [Defaults setObject:deviceToken forKey:@”deviceToken”];//Token值，用于登录的时候向后台发送用户对应的设备，方便针对进行推送    }    </code></pre><p><strong>强制更新模块：本地调用 版本号与服务器返回版本号对比大小进行控制</strong> </p><pre><code>    – (void)versionUpdate:(double)versionInfo {    ​    ///系统版本更新    ​    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];    ​    NSString *app_Version = [infoDictionary objectForKey:@”CFBundleShortVersionString”];//app版本    ​        ​    if (versionInfo &gt; [app_Version doubleValue]) {    ​        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@”提示” message:@”有新版本请立即更新” preferredStyle:UIAlertControllerStyleAlert];    ​        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@”立即更新” style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {    ​            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@”https://www.pgyer.com/obUA”]];    ​        }];    ​        [alert addAction:firstAction];    ​        [self presentViewController:alert animated:YES completion:nil];​    }}</code></pre><p><strong>关于列表的动态添加或删除</strong></p><p>对于TableView或CollectionView 的操作，从网络获取列表数据后，可以直接在本地列表进行操作，后台只需要返回成都或失败即可，没有必要去重新请求，刷新列表</p><p><strong>将上传图片加入主线程队列进行，防止阻断，界面更新放到放线程进行</strong></p><p>​        项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下</p><p>好分期后台管理iOS端开发总结：<br><strong>标准化开发，明确你每句代码的意图</strong></p><p>在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也不一定是每句代码都 要说明 点什么，除非你是新手第一次接手项目。另外发现几个稍微有点欠妥的地方，一是把网络请求接口直接写在项目代码里面不分层虽然方便了，但是后台如果要统一改接口名称 要一个个去找，不是很方便 。二是搜索这个控件在取消的时候并没进行重新请求（已经修改）。界面全部采用TableView作为基础在Cell上布局控件，这种做法让我耳目一新，但是模块化的效果好很明显。不过重复控件太多，有些可以通过Cell重用实现的。还有就是在加载的时候如果网络出现问题，用户只能等待，这样的体验不是很好，这点也是我以后写代码要注意的地方。这款App主要的功能作用是显示数据，复杂的计算和操作后台都处理好了，所以项目并不算大。维护起来也很轻松</p><p><strong>键盘弹出界面自动移动防止遮挡</strong></p><pre><code>///IQKeyboardManager:自动处理键盘事件的第三方库​    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];​    manager.enable = YES;//控制整个功能是否启用​    manager.shouldResignOnTouchOutside = YES;//控制点击背景是否收起键盘​    manager.shouldToolbarUsesTextFieldTintColor = YES;//控制键盘上的工具条文字颜色是否用户自定义​    manager.enableAutoToolbar = NO;//控制是否显示键盘上的工具条​    manager.preventShowingBottomBlankSpace = NO;//防止IQKeyboardManager让rootview上滑过度,默认是YES</code></pre><p><strong>IPS**</strong>不用第三方可以手动进行采取上传到服务器，用于点对点推送：** </p><pre><code>      //注册UserNotification,以获取推送通知的权限    ​    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];    ​    [application registerUserNotificationSettings:settings];    ​    //注册远程推送    ​    [application registerForRemoteNotifications];    ​        ​    // Override point for customization after application launch.    ​    return YES;    }    – (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {//处理推送消息    ​    NSLog(@”userinfo：%@”, userInfo);    ​    NSLog(@”收到推送消息：%@”, [[userInfo objectForKey:@”aps”] objectForKey:@”alert”]);    }    ///如果注册失败，比如没有证书等等调用    – (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {    ​    NSLog(@”远程通知注册失败：%@”, error);    }    ///用户同意后，会调用此程序，获取系统的deviceToken，应把deviceToken传给服务器保存，此函数会在程序每次启动时调用(前提是用户允许通知)    – (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {    ​    //NSLog(@”获取到的Token值为：%@”, deviceToken);    ​    [Defaults setObject:deviceToken forKey:@”deviceToken”];//Token值，用于登录的时候向后台发送用户对应的设备，方便针对进行推送    }    **强制更新模块：本地调用 版本号与服务器返回版本号对比大小进行控制**     – (void)versionUpdate:(double)versionInfo {    ​    ///系统版本更新    ​    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];    ​    NSString *app_Version = [infoDictionary objectForKey:@”CFBundleShortVersionString”];//app版本    ​        ​    if (versionInfo &gt; [app_Version doubleValue]) {    ​        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@”提示” message:@”有新版本请立即更新” preferredStyle:UIAlertControllerStyleAlert];    ​        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@”立即更新” style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {    ​            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@”https://www.pgyer.com/obUA”]];    ​        }];    ​        [alert addAction:firstAction];    ​        [self presentViewController:alert animated:YES completion:nil];​    }}</code></pre><p><strong>关于列表的动态添加或删除</strong></p><p>对于TableView或CollectionView 的操作，从网络获取列表数据后，可以直接在本地列表进行操作，后台只需要返回成都或失败即可，没有必要去重新请求，刷新列表</p><p><strong>将上传图片加入主线程队列进行，防止阻断，界面更新放到放线程进行</strong></p><pre><code>      dispatch_async(dispatch_get_global_queue(0, 0), ^{       队列操作。。。            ​        [Service serviceWithJAVAUrl:@”” params:params images:imgArr message:@”” controller:self succeedBlock:^(id response) {    ​            dispatch_async(dispatch_get_main_queue(), ^{    ​                 ​            });    ​        } failBlock:^{    ​            dispatch_async(dispatch_get_main_queue(), ^{    ​            });    ​        }];    ​    });    带图片带参数AFNetworking上传:    \+ (void)serviceWithUrl:(NSString *)url    ​                params:(NSDictionary *)params    ​                images:(NSArray *)images    ​               message:(NSString *)message    ​            controller:(id)controller    ​          succeedBlock:(void (^) (id response))succeedBlock    ​             failBlock:(void (^) (void))failBlock    {    ​    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];    //设置可以接收的数据类型    ​    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@”application/json”, @”text/json”, @”text/javascript”, @”text/html”, nil];    //设置是否对发送数据进行Json格式化    ​      //manager.requestSerializer=[AFJSONRequestSerializer serializer];    //报头标记，只是作为双方识别的记号而已    ​    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@”RqPs” password:@“***********”];    ​        ​    if (![message isEqualToString:@””]) {    ​        [SVProgressHUD showWithStatus:message maskType:SVProgressHUDMaskTypeBlack];    ​    }    ​        ​    NSString *URL = [NSString stringWithFormat:@”%@%@”,BASEURL,url];    ​    [manager POST:URL parameters:params constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData) {    ​        //[SVProgressHUD dismiss];    ​            ​        NSMutableArray *arr = [[NSMutableArray alloc] init];    ​        for (int i = 0; i &lt; images.count; i++) {    ​            NSDictionary *image = images[i];    ​            NSString *fileName = image.allKeys[0];    ​            int nameCount = 0;    ​            for (NSString *str in arr) {    ​                if ([str containsString:image.allKeys[0]]) {    ​                    nameCount++;    ​                    ///图片等比例压缩    ​                }    ​            }    ​                ​            ///重名 添加后缀    ​            if (nameCount != 0) {    ​                fileName = [NSString stringWithFormat:@”%@%d”, image.allKeys[0], nameCount+1];    ​            }    ​                ​            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];    ​            [formatter setDateFormat:@”yyyyMMddHHmmssSSS”];    ​            NSString *dateTime = [formatter stringFromDate:[NSDate date]];    ​            [arr addObject:[NSString stringWithFormat:@”%@_%@”, fileName, dateTime]];    ​        }    ​            ​       for (int i = 0; i &lt; images.count; i++) {    ​           NSDictionary *image = images[i];    ​           [formData appendPartWithFileData: UIImageJPEGRepresentation(image.allValues[0], 0.0) name:arr[i] fileName:[arr[i] stringByAppendingFormat:@”.png”] mimeType:@”image/png”];    ​       }    ​            ​    } success:^(AFHTTPRequestOperation *operation, id responseObject) {    ​        [SVProgressHUD dismiss];    ​        NSLog(@”%@”, responseObject);    ​            ​        NSDictionary *result = responseObject;    ​        if (![[NSString stringWithFormat:@”%@”, result[@”Flag”]] isEqualToString:@”1″]) {    ​            [ExtensionMethod simpleAlertWithMessage:responseObject[@”Message”] controller:controller handler:^{    ​                if (failBlock == NULL) {    ​                    return;    ​                }    ​                failBlock();    ​            }];    ​            return;    ​        } else if (result == nil) {    ​            [ExtensionMethod simpleAlertWithMessage:@”后台服务异常，请稍后再试” controller:controller handler:nil];    ​            return;    ​        }    ​            ​        succeedBlock(responseObject);    ​    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {    ​        [SVProgressHUD dismiss];    ​        if (failBlock) {    ​            [ExtensionMethod simpleAlertWithMessage:@”网络异常，请稍后再试” controller:controller handler:^{    ​                if (failBlock == NULL) {    ​                    return;    ​                }​                failBlock();​            }];​        }​    }];}</code></pre><p>​    </p><p>另外使用了比较好用的第三方控件：RMPickerViewController第三方选择器，UUID设备唯一标记方法</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 项目经历 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>heidakeng</title>
+      <link href="/2019/03/06/heidakeng/"/>
+      <url>/2019/03/06/heidakeng/</url>
+      
+        <content type="html"><![CDATA[<h1 id="黑大坑iOS端开发体"><a href="#黑大坑iOS端开发体" class="headerlink" title="黑大坑iOS端开发体"></a>黑大坑iOS端开发体</h1><p>说好听叫创业叫外水，说不好听叫折腾，本来挑50斤的人要去挑百斤的担子，自己一个人挑还不够，硬是要叫一伙人挑，我都有点佩服自己作死的勇气。</p><p><strong>机缘巧合认识老板</strong></p><p>不得不说，一个圈子很重要，特别是个优质的圈子。</p><p>为什么ACM比赛，电子科技大学的编程就是那么牛，因为他们有传统，除了选手优质外，有那么多老司机带路，能不厉害吗？</p><p>为什么同样是两年，有的人在小公司闭门造车，有的人在BAT进步神速。你是资源是远远比不上别人的，直接输在起跑线上，要追不得不付出代价。</p><p>明白了之前滴滴同城开比我小还却宝马的小伙给我说过人走茶凉的道理，你走了关系不一定能带走，因为你当时建立的关系别人看重的是你背后公司的资源。所以平台特别重要，特别是优质的平台，回报超出了你的付出。</p><p>头马是个优质而广阔的圈子，圈子里的人来自各行各业，而且由于有英语水平限制，进来的人算得上比较优质。在这里你的官员职位，你做的演讲级别是个很有用的铭牌。不仅仅是锻炼了你的社交能力，更是让你与其他人有不少的合作机会。于是结识了很厉害的David，通过他认识了很厉害的老G，因为我的工作和他们的需求联系起来。同样，你有某方面的需求，也会找到对应的人才。比如前段时间找职业规划师，就在群里面推荐了很优秀的阿舟老师。</p><p>圈子越大，机会越多，圈子优质，人就越可靠。</p><p><strong>如果产品需求和设计可以重来，我宁愿花一半的时间做这个事情</strong></p><p>客户对于产品的认识是不够全面的，所以你需要帮助他确定产品的预期效果，越准确越好，好处也非常的明显：帮助他清楚的知道自己要做哪一块，比如最开始我们这边得到的信息是做一个钓鱼资讯类的App，结果到后来卖票实现就可以了。导致做了很多无用的模块，最后被一一砍去。</p><p>关于界面效果一定要拿非常细致的设计图出来，原因有三：1、让他自己对看到的效果非常确信，这样后面他不会说你这个设计不如我看到的某个好看之类的2、你的开发任务更加明确，防止做重复工作和无用功。3、避免团队士气受打击，如果要推倒重做或者重要修改是非常麻烦的事情，因为不仅仅关系到个人，而是团队，从美工，到后台再到前端效果可能都需要修改，牵一发动全身。如果有临时要改的，要么列到下一个开发周期内进行。不然会造成非常混乱的结果。</p><p>这方面经验严重不足，导致后面出了很多问题。</p><p><strong>进度缓慢是谁的责任，不要和最好的朋友合伙开公司</strong></p><p>都说亲兄弟可以明算帐，但是在真正重视的人面前说狠话真的很难，特别是中国这个环境，工作和生活是分不开的，你不可能说今天我是你老板你工作干得不好臭骂你一顿，下班就找你出来玩，唱酒KTV，大家嗨起来当上班事情没发生，太难。项目容不能差错，兄弟伙也不能将就 ，该说指正的就要去说服。我也知道这个道理，但是往往会出现执行能力太差，做事拖拉你也不好明说。他也是有势无恐，我们这么铁的关系，我没时间做，你不能强制我吧。一方面老板要求的任务，另一方面要顾全面子，左右为难。</p><p>最好开始就说清楚，利益怎么分，你这个完成多少，你如果没有及时完成扣多少，如果你干不下来，那怎么办，这些不是因为相信就可以不先商量的。虽然这样开始关系会有点僵，但真的效果要好得多。</p><p><strong>需要担当，更需要实际行动</strong></p><p>一开始我想的合伙人模式，你完成你的模块，我完成我的模块，然后我们交接打通，项目就成了，钱也到手了，大家都高兴。但是发现这个过程中有三个很大的弊端：</p><p>1、软件开发是个体系动作，不是拼积木这么简单。从需求不明确就产生错误指导开始，数据库开始设计如果我就能参与其中，就不会有两个后台各自设计自已的数据库表，也会有一套详细的数据库设计文档，字段对应。另外后台也不会出现两种不同的调用方式、数据处理不统一，后台代码提交也出现问题。为什么做后台的人往往能成为一个公司的技术总监，因为他们往往掌握了核心技术，前端只是用户显示而已。所以需要担当，去把握核心的技术，制定标准的数据处理步骤和代码规范前期相当的重要。</p><p>2、有效沟通，为什么程序员会留给外界死板的印像，因为他们总是在开发的角度想问题，没有在客户的角度考虑问题，第一反应是这个该用什么来实现，或者这个东西我觉得这样挺好的，为什么你偏偏要改。以前有个段子说：什么方法让程序员自杀，那就是改三次需求。因为对于需求的理解和修改优化的目的非常的不了解，没有换位思考。在他觉技术没有问题这种情况下，你的优化方案是很难说服他的，特别是涉及我这个模块已经写了很多代码了，为什么你要改。你费了半天都可能在做无用功，另外有些时候重构要比修改来得高效。需求是不断变化的，这也是要求代码有良好拓展性和细分模块的原因所在。</p><p>3、确定他能不能做，程序员的核心能力我觉得应该是不断的学习实践能力。快速尝试学习使用新鲜技术，好奇心驱动应该是很重要的一环。当项目分工时，你真的要学会去判定他到底能不能做，做得出哪个效果。因为这个关心到整个项目的进度问题，他做不出来，不愿意去学习，那么开始的所有交代，沟通白搭。中途换人可能要从零开始，损失非常惨重，他固然有原因，但是属于你决策失误，预估不足，负主要责任。</p><p>合伙人制真的需要强力CP才能完成，在经验和能力缺少的情况下一味相信是不够的，而应该采取老板制，首先个人把头带好，然后强势、严格的要求每一个人和我一样做好自己的工作，开头说明直接与利益挂钩，合理安排时间完成规定任务，不妥协，不心软、不将就。虽然看似过份，但大家都有看得见的好处。值！</p><p><strong>涉及经验积累：</strong></p><p>阿里云服务器开通使用</p><p>阿里云OSS调用</p><p>微信开放平台微信支付申请</p><p>腾讯开发者平台申请</p><p>新浪平台申请</p><p>第三方地图使用及导航</p><p>优酷SDK调用</p><p>数据库创建与使用</p><p>PHP标记语言使用</p><p>HTML+CSS实践</p><p>Bootstrap研究学习</p><p>Linux WordPress的搭建</p><p>视频SDK调用</p><p>来一波视图：</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 项目经历 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>lgfishing</title>
+      <link href="/2019/03/06/lgfishing/"/>
+      <url>/2019/03/06/lgfishing/</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
       
       
     </entry>
     
     <entry>
-      <title>good</title>
-      <link href="/2019/03/05/good-1/"/>
-      <url>/2019/03/05/good-1/</url>
+      <title>hexi_travel</title>
+      <link href="/2019/03/06/hexi-travel/"/>
+      <url>/2019/03/06/hexi-travel/</url>
       
-        <content type="html"><![CDATA[<h3 id="I-love-you-beautiful-girl"><a href="#I-love-you-beautiful-girl" class="headerlink" title="I love you, beautiful girl~"></a>I love you, beautiful girl~</h3>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
-      <title>good</title>
-      <link href="/2018/09/26/good/"/>
-      <url>/2018/09/26/good/</url>
-      
-        <content type="html"><![CDATA[<p>how to make a difference!<br>fqjefpjq3p4jfq3j4pogj3q4ojgoiq3[ognq[ng[onqre[gnq[wen[gonwqe[ngokqwnek[gnw[qekn[vomo[ewq[ovmwqe[onvo[wen[ongwq[eonvoqenvnqewvnqenv</p>]]></content>
+        <content type="html"><![CDATA[<p>&lt;% asset_img 1.jpg %&gt;</p><p>项目概况：</p><p>这两款软件是和系的洐生软件，一开始和系要做一个综合平台，包括电子商务、家政服务、周边旅游，后面进行了业务拆分，自然就有了和家政和和乡游，一个是针对成都本地的家政服务，一个针对成都周边的乡村旅游，都有很好的布局，很大的市场前景。不过最后还是因为多方面考虑，公司叫停了这两个项目，这算是自己最开始完全负责的App,体会也很多，收获也很大。</p><p>技术上</p><p>1、学习了TableView控件的headerView的使用，TableCell的拓展，</p><p>2、较为复杂的页面布局，逐步单独接触并完成聊天、地图、及网页加载一系列功能</p><p>看似简单，但是要求很细致才行，比如WebView的高度老是算不准确，场景切换不能多样化，以前等比例布局。这两个软件都为我提供了很好的实战参考。</p><p>苹果的图已经全部找不到了，就用安卓的代替了，另外和家政找不到了，只有项目图标，小型项目的开发其实在已经有和系的基础上很方快的。</p><p>&lt;% asset_img 2.jpg %&gt;</p><p>&lt;% asset_img 3.jpg %&gt;</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 项目经历 </tag>
+            
+        </tags>
       
     </entry>
     
     <entry>
-      <title>first</title>
-      <link href="/2018/09/26/first/"/>
-      <url>/2018/09/26/first/</url>
+      <title>hexi_assist</title>
+      <link href="/2019/03/06/hexi-assist/"/>
+      <url>/2019/03/06/hexi-assist/</url>
       
-        <content type="html"><![CDATA[<p>hello wolrd!<br>I will be better!</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="和商助手开发记录"><a href="#和商助手开发记录" class="headerlink" title="和商助手开发记录"></a>和商助手开发记录</h1><img src="/2019/03/06/hexi-assist/1.jpg" title="产品图片"><h3 id="项目概况："><a href="#项目概况：" class="headerlink" title="项目概况："></a>项目概况：</h3><p>和商助手是和系的商家端，和系是个类似小京东的平台，助手是为了帮助商家进行发货，与买家互动、提现等一系列操作。功能相对简单，但是比较实用。个人负责和商助手新模块的开发与对现有模块进行功能优化，负责实现美工设计界面，负责与后台沟通接收网络数据，按进度完成开发任务。</p><p>主要包括了下面一系列功能：</p><p>1、免费开店，操作简单，只要两步就能开店。</p><p>2、管理方便，随时随地添加商品、查看并处理订单。</p><p>3、提现周期短，申请提现后1-2个工作日到账。</p><p>4、快捷分享，一键分享商品到微信、QQ等多个平台</p><h3 id="项目难点："><a href="#项目难点：" class="headerlink" title="项目难点："></a>项目难点：</h3><p>商品上传模块过于复杂，技术不成熟代码也写得最复杂。这是我写过的最艰难的代码，可能确定内功不够，模块的设计也是不成功，技术上受限制，想采用Masonry的技术来实现。</p><p>1、实现商品上传，有图有没有图是两种不一样的显示状态，自己还运用了Masonry的动态进行实现。</p><p>2、要实现类别联动，也就是选择一个父类后要显示对应的子类，如果没有父类则显示默认，选择还需要选择变动请求网络，所以独立出来了一个模块</p><p>3、标签多种选择，一个类别有几个规格，比如尺寸有：大中小，颜色有红黄绿，最开始产品设计不能满足产品多样规格的需求，后面我们虽然即时想去了列表显示的方式解决问题，但是所有商品使用同一个规格表，导致哪怕是新加一个商品，都要做选择，只有一两个属性还好，想想20多个属性去选择是什么概念，每点一个要显示出来，每个列表的规格值还可以动态添加或者删除，另外提交的时候要去判断是不是该商品所有的规格选中了，没有选择还要提示，另外如果商品没有设置规格那么使用另外一种方式显示。总之逻辑上就够你确定半天了。技术上当时最让我头痛的就是不断增加的属性列表，以及最后的提交计算，你可能觉得可能没那么复杂。但是涉及到TableViewCell不动态刷新，Masonry动态添加删除控件，以及20多个属性的组合，就有点让人觉得疯狂了，最好还是做出来了，但是不想再去看第二眼，大大小小的各类模块和不规范的代码让自己读起来都有点吃力。程序设计一定要严谨。</p><h3 id="二：动态图文列表"><a href="#二：动态图文列表" class="headerlink" title="二：动态图文列表"></a>二：动态图文列表</h3><p>要做到图文混排，很多人觉得可能TableView就可以了，但是TableView不好处理单位Cell的长度增长，就是我在中间的文字区域编辑，内容增加或减少引起的行变化。TableView每次都得去刷新，非常麻烦，而且刷新你是不能编辑的，也就是刷新的时候没有输入焦点，无法输入。图片好处理，文字的动态变化非常伤脑筋。幸好当时深入研究了Masonry的约束规则，采用了约束的办法动态调整TextView的高度变化，还可以在文字删除完毕时把对应的TextView也干掉，比较合适的解决了这个问题。后面我发现这方面处理的最好的是wordpress的App版本，采用JS与html交互的方式，可能对文字加粗变长斜之类的，非常方便。功能非常强大，关系是完成后直接生成html代码，方便Web直接使用。非常完善的解决了这个需求。后面自己的项目也想接入这个模块用于发布文章，无奈老是有那么几个链接错误找不到原因解决。后面要尝试解决。</p><h3 id="三：没有做本地缓存和缺少有效通知机制"><a href="#三：没有做本地缓存和缺少有效通知机制" class="headerlink" title="三：没有做本地缓存和缺少有效通知机制"></a>三：没有做本地缓存和缺少有效通知机制</h3><p>虽然有WebImageChache这个类别减少图片的请求，但每次进入首页都要请求一次各种消息：比如商户帮助文字、用户是否有某个状态更改了，非常的消耗流量，特别是帮助，并不是经常更新的东西，安全可以采用本地缓存加通知更新的方式解决，特别是把推送和本地数据库的功能用好，采用Version判断是不是要更新某个信息，重新请求。包括和系在内都可以采用这种方式减少不必要的流量消耗，当时提出来了，可惜由于各种原因，最终没有实现。</p><p>总的来说和商助手基本满足用户使用需求，但是技术和设计上还有许多要改进优化的地方。</p><img src="/2019/03/06/hexi-assist/2.jpg" title="产品图片"><img src="/2019/03/06/hexi-assist/3.jpg" title="产品图片"><img src="/2019/03/06/hexi-assist/4.jpg" title="产品图片">]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 项目经历 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexi</title>
+      <link href="/2019/03/06/Hexi/"/>
+      <url>/2019/03/06/Hexi/</url>
+      
+        <content type="html"><![CDATA[<img src="/2019/03/06/Hexi/1.jpg" title="产品图片"><h3 id="项目概述："><a href="#项目概述：" class="headerlink" title="项目概述："></a>项目概述：</h3><p>自从毕业就在和系网络科技股份有限公司担任iOS工程师一职，公司主要是电子商务方向。在工作上全权负责公司iOS端系列产品的开发。参与公司业务模块的技术讨论与需求分析并负责实现。重构或者优化公司的相关开发模块，最开始的时候是每周加个版本并进行更新，后面完成的差不多了基本每两周迭代一个版本添加一个功能界面模块。曾将和系从原来的80多兆（采用了PhoneGap）的体积重构优化到了20多兆(Object-C原生)并进行框架上的重构。自集成相关通用类提高开发技术。开发倾向纯代码流（受苹果原生应用与移植和适配的影响）。</p><p>和系App主要是服务于广大消费者的购物平台。不同于其它常规的购物平台，和系包括了抢红包抵现、签到获得积分换购商品，9块9包邮、众筹、新人福利等一系列的吸引用户购买的功能，引入了淘宝客的商品，另外有一套比较完善的类似直销发展会员的体系。这种方式促进用户邀请自己的好友注册成为和系会员，用户保有率较高，存留方式较好。公司一直在界面设计上下功夫，从无到有，越做越好，参考了大量的同行设计，也逐渐形成了自己的一套风格。</p><h3 id="产品亮点："><a href="#产品亮点：" class="headerlink" title="产品亮点："></a>产品亮点：</h3><p>蓝莓娃娃logo:公司是集团产业，旗下拥有自己的蓝莓产业基地，从去年开始在都江堰天马镇开了第一届蓝莓采摘节，邀请网红与游客互动，增加人气。总之蓝莓娃娃形像淘气可爱，还自带叶子作的翅膀，就像一个小仙子一样生动有趣。</p><p>完善的营销体系：从购物-分享-收益形成了正向循环，一方面有购物上通过红包抵销部分价格、签到积分换购商品（签到一个月可以换30元话费）等一系列方式吸引流量，另一方面分享可以提高用户等级，最高到至尊（主要是返利收益）促进用户推广，再到收益，你的下线消费后你将会获得收益。整个体系各个环节有机结合，增加用户活跃度和粘性</p><p>红包：每天都会有红包，等级越高能够抢的大红包就越多，不过只能抵用部分，不像以前可以全额。</p><h3 id="技术难度："><a href="#技术难度：" class="headerlink" title="技术难度："></a>技术难度：</h3><p>支付难度：自有和系支付钱包，接入第三方包括银联，微信支付宝等，银联由于大幅调整过一次，导致过之前的版本不能使用银联支付。后面采用了动态显示支付方式的办法进行后端控制。之前由于支付宝安全漏洞导致被攻击过，所面做了调整，把安全部分的计算放到了后端进行验证。</p><h3 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h3><p>1.最好写个SDK用于系列产品统一调用，方便集成开发使用。另一方面方便后台统一进行支付显示控制。</p><p>2.支付数据一定要做好加密处理，不能外泄。</p><p>安全难度：作为电子商务平台，对安全是相关关注的，目前自己就职的瑞骐金服的拳头产品就完成了一次安全升级：放弃了.NET的后台，而采取多线程处理能力更为强大的JAVA，另外数据库也换成了Orancle（这个是重点）。所以数据库作为核心，一定要建立一套严密的防范机制，防止SQL注入和直接操作。</p><p>公司之前采用的最简单http传输的办法，所有核心数据暴露无疑，所以当然成为了被练手的对象，包括被无数次的调用短信发送Api。以前被各种攻击。后台采用了混合加密的办法，但是没有考虑很关键的问题：效率，一方面App每次加密都要进行ASP加密，128位资源消耗巨大，另一方面服务器还要解密，也是需要强大的计算能力，更关系的是请求量大的时候将无从下手，另外有效保护了数据安全，但效率不敢维恭，另外不能防止重放攻击。不过也是感谢那次经历，个人对DES加密和RSA加密有了更加深入的了解，个人实现了苹果端的加密。</p><p>后面进行架构调整采用HTTPS加载方式增加安全性，不过由于App端兼容性设计不到位，导致了接口一个一个的换，后台返回的数据也有较大的变化，导致还要逐个去调试，大大降低了开发效率，不过技术还是没有完全到位，只保证了传输过程中不被窃取，但是发送源头还是存在被获取源数据的风险。</p><p>解决办法：为什么当时我们没有想到Token呢，早就被大量使用的技术，另外还可能 采用报头加密和前后端序列协商等一系列安全组合，保证安全。网络传输明文真的太危险，核心的支付验证一定要放在后台，还要防止中间人攻击，还有就是App端的数据收发要独立出来成为一个单独的模块，提高扩展性与灵活性，最好接口都可以放在一个专门的地方。</p><p>团队配合：公司团队组合能力不够强，虽然大家都各司其职，但是缺少一个技术出身的项目经理，要是有的话在软件开发，产品设计和开发架构上一开始就设计好，可以减少很多不必要的重新调整，另外核心技术在外包，一定要舍得培养自己的技术队伍，搞好技术成长的建设，很多公司有自己的研发中心这是个很明显的例子，这也是我离开最主要的原因。技术上属于闭门造车，缺少技术有效交流。还有就是技术团队应该是个敢于冒风险，尝试新技术的团队。不仅仅界面上要做得好看，技术上也要跟上才行。还有就是标准化开发，后面由于后台太忙，没有时间写接口，导致苹果端需要自发去解决，导致开发落后，非常浪费时间，让人沮丧。</p><h3 id="开发体会："><a href="#开发体会：" class="headerlink" title="开发体会："></a>开发体会：</h3><p>和系是我第一次接手的中型项目，也是技术成长的一个主要见证，主要对整个项目进行了两次重构，第一次是从PhoneGap框架修改为了纯原生，另一次是受框架启发，重新对项目进行调整，一方面删除了很多不用的模块，另一方面使项目更加的规范可拓展。掌握了第三方支付集成、第三方登录集成、聊天融去SDK集成、自定义聊天界面开发、混合加密、Masonry约束布局及屏幕适配还有大量其它类别的使用等相关技术。</p><p>附相关App界面：<br><img src="/2019/03/06/Hexi/2.jpg"><br><img src="/2019/03/06/Hexi/3.jpg"><br><img src="/2019/03/06/Hexi/4.jpg"><br><img src="/2019/03/06/Hexi/5.jpg"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 项目经历 </tag>
+            
+        </tags>
       
     </entry>
     
