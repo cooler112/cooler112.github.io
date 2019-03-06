@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Swift起步 | ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于公司需要，所以拖得不得再拖的Swift学习终于提上日程，教就是最好的学，先摘要，后总结完善，在实战过程中学习进步。 Swift，苹果于2014年WWDC（苹果开发者大会）发布的新开发语言，可与Objective-C*共同运行于Mac OS和iOS平台，用于搭建基于苹果平台的应用程序。 ###Swift核心：安全：明确的类型定义和语法规范有效避免出现未知错误，空指针引用高效：是替代C、C++、O">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift起步">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/Swift起步/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="由于公司需要，所以拖得不得再拖的Swift学习终于提上日程，教就是最好的学，先摘要，后总结完善，在实战过程中学习进步。 Swift，苹果于2014年WWDC（苹果开发者大会）发布的新开发语言，可与Objective-C*共同运行于Mac OS和iOS平台，用于搭建基于苹果平台的应用程序。 ###Swift核心：安全：明确的类型定义和语法规范有效避免出现未知错误，空指针引用高效：是替代C、C++、O">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-06T09:46:38.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift起步">
+<meta name="twitter:description" content="由于公司需要，所以拖得不得再拖的Swift学习终于提上日程，教就是最好的学，先摘要，后总结完善，在实战过程中学习进步。 Swift，苹果于2014年WWDC（苹果开发者大会）发布的新开发语言，可与Objective-C*共同运行于Mac OS和iOS平台，用于搭建基于苹果平台的应用程序。 ###Swift核心：安全：明确的类型定义和语法规范有效避免出现未知错误，空指针引用高效：是替代C、C++、O">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-Swift起步" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Swift起步
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/Swift起步/" class="article-date"><time datetime="2019-03-06T09:46:24.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由于公司需要，所以拖得不得再拖的Swift学习终于提上日程，教就是最好的学，先摘要，后总结完善，在实战过程中学习进步。</p>
+<p>Swift，苹果于2014年<a href="https://baike.baidu.com/item/WWDC" target="_blank" rel="noopener">WWDC</a>（苹果开发者大会）发布的新开发语言，可与<a href="https://baike.baidu.com/item/Objective-C" target="_blank" rel="noopener">Objective-C</a>*共同运行于<a href="https://baike.baidu.com/item/Mac%20OS" target="_blank" rel="noopener">Mac OS</a>和<a href="https://baike.baidu.com/item/iOS/45705" target="_blank" rel="noopener">iOS</a>平台，用于搭建基于苹果平台的应用程序。</p>
+<p>###Swift核心：<br>安全：明确的类型定义和语法规范有效避免出现未知错误，空指针引用<br>高效：是替代C、C++、OC的理想化工具，良好一致的性能优异表现<br>良好阅读性：基于数十年的科学语法研究，持续优化语法提供更好的可读可写生</p>
+<p>###Swift特点<br>Closures unified with function pointers<br>Tuples and multiple return values<br>Generics<br>Fast and concise iteration over a range or collection<br>Structs that support methods, extensions, and protocols<br>Functional programming patterns, e.g., map and filter<br>Powerful error handling built-in<br>Advanced control flow with do, guard, defer, and repeat keywords<br>闭包的统一与函数指针<br>元组和多个返回值<br>泛型<br>快速而简洁的迭代范围或集合<br>支持的方法，扩展的协议结构。<br>函数式编程模式，例如：映射（map）和过滤器（filter）<br>强大的异常处理<br>先进的控制流关键字</p>
+<p>###与之前语法的区别<br>不同于OC，Swift支持多元返回值<br>类型安全<br>类型安全语言有严格的语法要求</p>
+<p></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/Swift起步/" data-id="cjsx0po62000a12tpufcq03zj" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/06/iOS端本地sqlite批量插入对比/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">iOS端本地sqlite批量插入对比</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

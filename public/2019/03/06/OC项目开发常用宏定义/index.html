@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>OC项目开发常用宏定义 | ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: OC项目开发常用宏定义date: 2017-02-25 15:40:37 tags:1234567891011121314151617181920212223242526272829303132333435363738394041#define WS(weakSelf)  __weak __typeof(self)weakSelf = self; //__typeof() 声明数据">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OC项目开发常用宏定义">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/OC项目开发常用宏定义/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="title: OC项目开发常用宏定义date: 2017-02-25 15:40:37 tags:1234567891011121314151617181920212223242526272829303132333435363738394041#define WS(weakSelf)  __weak __typeof(self)weakSelf = self; //__typeof() 声明数据">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-06T09:45:35.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OC项目开发常用宏定义">
+<meta name="twitter:description" content="title: OC项目开发常用宏定义date: 2017-02-25 15:40:37 tags:1234567891011121314151617181920212223242526272829303132333435363738394041#define WS(weakSelf)  __weak __typeof(self)weakSelf = self; //__typeof() 声明数据">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-OC项目开发常用宏定义" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      OC项目开发常用宏定义
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/OC项目开发常用宏定义/" class="article-date"><time datetime="2019-03-06T09:40:09.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: OC项目开发常用宏定义<br>date: 2017-02-25 15:40:37</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#define WS(weakSelf)  __weak __typeof(self)weakSelf = self; //__typeof() 声明数据类型</span><br><span class="line">#define DEF [NSUserDefaults standardUserDefaults]</span><br><span class="line"></span><br><span class="line">//屏幕适配 间距设置</span><br><span class="line">#define HORIZ_5 AUTO_WIDTH(5)</span><br><span class="line">#define HORIZ_10 AUTO_WIDTH(10)</span><br><span class="line">#define VERTICAL_5  AUTO_HIGHT(5)</span><br><span class="line">#define VERTICAL_10  AUTO_HIGHT(10)</span><br><span class="line"></span><br><span class="line">//指定某设计图尺寸确定高度或指按屏幕比例放缩</span><br><span class="line">#define IMGHEIGHT_720(x) (x/720.0f*Main_Screen_Width)</span><br><span class="line">//#deine IMGHEIGHT(x)(y) (y/x*AUTO_WIDTH(x))</span><br><span class="line"></span><br><span class="line">//设备尺寸</span><br><span class="line">#define iphone4x_3_5 ([UIScreen mainScreen].bounds.size.height==480.0f)</span><br><span class="line">#define iphone5x_4_0 ([UIScreen mainScreen].bounds.size.height==568.0f)</span><br><span class="line">#define iphone6_4_7 ([UIScreen mainScreen].bounds.size.height==667.0f)</span><br><span class="line">#define iphone6Plus_5_5 ([UIScreen mainScreen].bounds.size.height==736.0f || [UIScreen mainScreen].bounds.size.height==414.0f)</span><br><span class="line">#define IMAGEINDEX Main_Screen_Width / 720.0f</span><br><span class="line"></span><br><span class="line">//应用框架尺寸</span><br><span class="line">#define  NAVHEIGHT 64</span><br><span class="line">#define TABBARHEIGHT 40</span><br><span class="line"></span><br><span class="line">//app 尺寸宏定义</span><br><span class="line">#define Main_Screen_Height [[UIScreen mainScreen] bounds].size.height //主屏幕的高度</span><br><span class="line">#define Main_Screen_Width  [[UIScreen mainScreen] bounds].size.width  //主屏幕的宽度</span><br><span class="line">/*** KeyWindow Height Width */</span><br><span class="line">#define KeyWindow_Height [[[UIApplication sharedApplication] keyWindow] frame].size.height //KeyWindow的高度</span><br><span class="line">#define KeyWindow_Width  [[[[UIApplication sharedApplication] keyWindow] frame].size..width  //KeyWindow的宽度</span><br><span class="line">#define AUTO_WIDTH(number)   (number) / 375.0 *  CGRectGetWidth([UIScreen mainScreen].bounds)</span><br><span class="line">#define AUTO_HIGHT(number)   (number) / 667.0 *  CGRectGetHeight([UIScreen mainScreen].bounds)</span><br><span class="line"></span><br><span class="line">#define AUTO_WIDTH1080(number)   (number) / 540.0 *  CGRectGetWidth([UIScreen mainScreen].bounds)</span><br><span class="line">#define AUTO_HIGHT1920(number)   (number) / 960.0 *  CGRectGetHeight([UIScreen mainScreen].bounds)</span><br><span class="line">//当前版本</span><br><span class="line">#define FSystenVersion            ([[[UIDevice currentDevice] systemVersion] floatValue])</span><br><span class="line">#define AppVersion              ([[[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;CFBundleShortVersionString&quot;] floatValue])</span><br><span class="line"></span><br><span class="line">// 字符串去空格</span><br><span class="line">#define strTrimming(x) [x stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]</span><br></pre></td></tr></table></figure>
+<p>#颜色字号定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">#define COLORWITHRGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]</span><br><span class="line">//主题色</span><br><span class="line">#define STATUS_BAR_COLOR [UIColor colorWithRed:255/255.0 green:56/255.0 blue:61/255.0 alpha:1]</span><br><span class="line">//#define TINY_COCLOR [UIColor colorWithRed:244/255.0 green:120/255.0 blue:0/255.0 alpha:1]</span><br><span class="line">#define TINY_COCLOR [UIColor colorWithRed:255/255.0 green:56/255.0 blue:61/255.0 alpha:1]</span><br><span class="line">#define TINY_LIGHT_COLOR UIColorFromRGB(0xff9b9e)</span><br><span class="line"></span><br><span class="line">#define BACKGROUNDCOLOR [UIColor colorWithRed:243/255.0 green:243/255.0 blue:243/255.0 alpha:1]</span><br><span class="line"></span><br><span class="line">#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]</span><br><span class="line">#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]</span><br><span class="line">#define ARC_COLOR RGBCOLOR(arc4random()%255, arc4random()%255, arc4random()%255)</span><br><span class="line">#define KdarkGayColor RGBCOLOR(50, 50, 50)//深灰</span><br><span class="line">#define KlightGayColor  RGBCOLOR(220, 220,220)//浅灰</span><br><span class="line">#define KtextGayColor UIColorFromRGB(0x616161)</span><br><span class="line">#define darkf4 UIColorFromRGB(0xf4f4f4)</span><br><span class="line">#define dark444 UIColorFromRGB(0x444444)</span><br><span class="line">#define dark999 UIColorFromRGB(0x999999)</span><br><span class="line">#define dark666 UIColorFromRGB(0x666666)</span><br><span class="line">#define darkf3f UIColorFromRGB(0xf3f3f3)</span><br><span class="line"></span><br><span class="line">#define FONT(x) [UIFont systemFontOfSize:x]</span><br><span class="line">#define FONT_B(x) [UIFont boldSystemFontOfSize:x]</span><br><span class="line"></span><br><span class="line">#define FONT_10   [UIFont systemFontOfSize:10]</span><br><span class="line">#define FONT_10_B [UIFont boldSystemFontOfSize:10]</span><br><span class="line"></span><br><span class="line">#define FONT_12   [UIFont systemFontOfSize:12]</span><br><span class="line">#define FONT_12_B [UIFont boldSystemFontOfSize:12]</span><br><span class="line"></span><br><span class="line">#define FONT_14   [UIFont systemFontOfSize:14]</span><br><span class="line">#define FONT_14_B [UIFont boldSystemFontOfSize:14]</span><br><span class="line"></span><br><span class="line">#define FONT_16   [UIFont systemFontOfSize:16]</span><br><span class="line">#define FONT_16_B [UIFont boldSystemFontOfSize:16]</span><br><span class="line"></span><br><span class="line">#define FONT_18   [UIFont systemFontOfSize:18]</span><br><span class="line">#define FONT_18_B [UIFont boldSystemFontOfSize:18]</span><br><span class="line">//适配字体</span><br><span class="line">#define SizeScale ((KeyWindow_Height &gt; 568) ? KeyWindow_Height/568 : 1)</span><br><span class="line">#define FONTNEW(x) [UIFont systemFontOfSize:x * SizeScale]</span><br><span class="line">#define FONTNEW_B(x) [UIFont boldSystemFontOfSize:x *SizeScale]</span><br><span class="line"></span><br><span class="line">#define FONTNEW_10   FONTNEW(10)</span><br><span class="line">#define FONTNEW_10_B FONTNEW_B(10)</span><br><span class="line"></span><br><span class="line">#define FONTNEW_12   FONTNEW(12)</span><br><span class="line">#define FONTNEW_12_B FONTNEW_B(12)</span><br><span class="line"></span><br><span class="line">#define FONTNEW_14   FONTNEW(14)</span><br><span class="line">#define FONTNEW_14_B FONTNEW_B(14)</span><br><span class="line"></span><br><span class="line">#define FONTNEW_16   FONTNEW(16)</span><br><span class="line">#define FONTNEW_16_B FONTNEW_B(16)</span><br><span class="line"></span><br><span class="line">#define FONTNEW_18   FONTNEW(18)</span><br><span class="line">#define FONTNEW_18_B FONTNEW_B(18)</span><br><span class="line"></span><br><span class="line">#define SizeScale1920 ((KeyWindow_Height &gt; 960) ? KeyWindow_Height/960 : 1)</span><br><span class="line">#define FONTNEW1080(x) if(iphone6Plus_5_5)&#123;return [UIFont systemFontOfSize:x * 1.15 / 3];&#125;</span><br><span class="line">#define FONTNEW_B1920(x) [UIFont boldSystemFontOfSize:x *SizeScale]</span><br><span class="line"></span><br><span class="line">//RGB颜色转换（16进制-&gt;10进制）</span><br><span class="line">#define UIColorFromRGB(rgbValue)    [UIColor colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 green:((float)((rgbValue &amp; 0xFF00) &gt;&gt; 8))/255.0 blue:((float)(rgbValue &amp; 0xFF))/255.0 alpha:1.0]</span><br><span class="line"></span><br><span class="line">#define lightgrayColor  UIColorFromRGB(0xe8e8e8)</span><br><span class="line">#define mostlightgrayColor  UIColorFromRGB(0xf3f3f3)</span><br><span class="line">#define slivergrayColor  UIColorFromRGB(0xc0c0c0)</span><br><span class="line">#define darkgrayColor  UIColorFromRGB(0x444444)</span><br><span class="line">#define mostdarkgrayColor  UIColorFromRGB(0x999999)</span><br><span class="line">#define darkmiddleColor UIColorFromRGB(0x666666)</span><br><span class="line">#define bluemiddleColor UIColorFromRGB(0x00a0ec)</span><br><span class="line">#define grayCCCCC UIColorFromRGB(0xcccccc)</span><br><span class="line"></span><br><span class="line">#define LOADIMAGE(file) [[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:@&quot;png&quot;]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]</span><br><span class="line">#define LOADIMAGECACHES(file) [UIImage imageNamed:file]</span><br><span class="line">#define PLACEHOLDER_IMAGE    LOADIMAGECACHES(@&quot;duoduo_gray&quot;)</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/OC项目开发常用宏定义/" data-id="cjsx0po60000712tpk5z0ogf8" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/06/MVC的理解与运用总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">MVC的理解与运用总结</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/03/06/OC常用格式检查/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">OC常用格式检查</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

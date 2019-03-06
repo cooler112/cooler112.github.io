@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MVC的理解与运用总结 | ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于MVC是目前行业常用的设计模式，起源于SmallTalk,是许多计算机语言和架构都采用的设计模式，虽然有MVVC,MVP等其它优秀的设计模式，但是MVC依然是经典的模式，很多人可能会说MVC不够灵活，MVC会使项目臃肿，但那只是没有处理好而已。在我看来，没有绝对好的设计模式，而是在整个系统项目中怎么和系统的四层架构（即：表示层，业务逻辑层，数据持久层，信息系统层）一一对应起来。最经典的就像在不">
+<meta name="keywords" content="IT,编程,疯狂,偏执,技术狂牛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC的理解与运用总结">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/MVC的理解与运用总结/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="关于MVC是目前行业常用的设计模式，起源于SmallTalk,是许多计算机语言和架构都采用的设计模式，虽然有MVVC,MVP等其它优秀的设计模式，但是MVC依然是经典的模式，很多人可能会说MVC不够灵活，MVC会使项目臃肿，但那只是没有处理好而已。在我看来，没有绝对好的设计模式，而是在整个系统项目中怎么和系统的四层架构（即：表示层，业务逻辑层，数据持久层，信息系统层）一一对应起来。最经典的就像在不">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/MVC的理解与运用总结/1.png">
+<meta property="og:updated_time" content="2019-03-06T09:45:01.786Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MVC的理解与运用总结">
+<meta name="twitter:description" content="关于MVC是目前行业常用的设计模式，起源于SmallTalk,是许多计算机语言和架构都采用的设计模式，虽然有MVVC,MVP等其它优秀的设计模式，但是MVC依然是经典的模式，很多人可能会说MVC不够灵活，MVC会使项目臃肿，但那只是没有处理好而已。在我看来，没有绝对好的设计模式，而是在整个系统项目中怎么和系统的四层架构（即：表示层，业务逻辑层，数据持久层，信息系统层）一一对应起来。最经典的就像在不">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/06/MVC的理解与运用总结/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-MVC的理解与运用总结" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      MVC的理解与运用总结
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/MVC的理解与运用总结/" class="article-date"><time datetime="2019-03-06T09:39:59.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于MVC是目前行业常用的设计模式，起源于SmallTalk,是许多计算机语言和架构都采用的设计模式，虽然有MVVC,MVP等其它优秀的设计模式，但是MVC依然是经典的模式，很多人可能会说MVC不够灵活，MVC会使项目臃肿，但那只是没有处理好而已。在我看来，没有绝对好的设计模式，而是在整个系统项目中怎么和系统的四层架构（即：表示层，业务逻辑层，数据持久层，信息系统层）一一对应起来。最经典的就像在不同型号的同一个App，只有表示层发生变化，而其它层不用发生改变，也就是只有View发生变化，Model层不发生改变。View里面不能包含业务逻辑的代码。</p>
+<p>一个好的层次设计能够带来优化和开发的巨大便利，而所有代码只写在一个若几个文件不进行权责的区分必然会为后期的开发带来巨大的麻烦，读代码都要花费大半天的时间。因此设计模式显得如此重要。</p>
+<p>MVC模式：<br>Model:保存应用数据状态，回应视图状态查询，处理应用业务逻辑，完成应用功能，将状态变化通知视图<br>View:为用户展示信息提供接口，通过视图向控制器发出请求，向模型发出数据查询<br>Controller:接收用户请求，更新模型数据，更新所对应视图状态响应用户请求，作为视图和模型的媒介，降低耦合度，权责清晰提高开发效率<br>其中Model和Controller之间的交互主要通过KVO来实现，也就是发布定阅模式，对应属性值是变化可以让Controller收到消息<br>View和Controller之间的交互主要通过代理委托，通知及代码块进行实现</p>
+<p>##因此对于一个项目有几点要足够重视：  </p>
+<ol>
+<li>按照模块进行细分  </li>
+<li>尽量不要把所有模块都要用的视图或弹框放在一个CommenView里面，这样可能的结果是这个公共类越来越臃肿。写成一个单独的模块，或者说单例去实现的方法做到专用要好得多。</li>
+<li>所有的视图要继承基视图，导航栏要继承基导航栏，网络请求底层统一调用一个封装好的类。这样最大的好处在于当需求发生改变(导航条上加按钮)或者要统一进行设置时（Http改https）可以很方便的进行设置</li>
+<li>使用Cocoapods去管理所有第三方要用过自己去添加，方便集成，更新和管理</li>
+<li>重视对代码的重用编写公共类进行操作。</li>
+</ol>
+<p><a href="https://github.com/cooler112/iOSMVCTemple" target="_blank" rel="noopener">iOSMVCTemple是自己从项目中提取的框架</a>，集成了很多第三方库和类别，我自己也做了很多自定义，比如用户信息放到单例，封装好的BaseView,BaseNavigationController.主要目的是写成个好的框架不断完善。方便后期快速布置开发环境。<br><img src="/2019/03/06/MVC的理解与运用总结/1.png" alt=""></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/MVC的理解与运用总结/" data-id="cjsx0po5x000612tpj2jg1s95" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/06/iOS-AlertController使用方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">iOS_AlertController使用方法</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/03/06/OC项目开发常用宏定义/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">OC项目开发常用宏定义</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

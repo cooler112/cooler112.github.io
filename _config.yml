@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ITCooler的极客之路
+title: ITCooler
 subtitle: 做一个好玩有趣的技术达人
 description: 本站仅用于技术交流个人总结
 keywords: IT,编程,疯狂,偏执,技术狂牛
@@ -35,7 +35,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -74,7 +74,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: bootstrap-blog
-# theme: aero-dual
+# theme: Nlvi
 # theme: hexo-theme-Claudia
 
 # Deployment

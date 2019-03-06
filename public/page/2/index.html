@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本站仅用于技术交流个人总结">
+<meta name="keywords" content="IT,编程,疯狂,偏执,技术狂牛">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ITCooler">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="本站仅用于技术交流个人总结">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ITCooler">
+<meta name="twitter:description" content="本站仅用于技术交流个人总结">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          
+  
+    <article id="post-Chrom-Vimium实现全键盘操作" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/Chrom-Vimium实现全键盘操作/">Chrom+Vimium实现全键盘操作</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/Chrom-Vimium实现全键盘操作/" class="article-date"><time datetime="2019-03-06T09:35:33.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不用移动，确定，点击，全键盘搞定，不过部分文本选中这块要使用鼠标进行选中，当习惯键盘操作后会发现非常的快捷 </p>
+<p>####Tab and window shortcuts窗口标签快捷键<br>| 快捷键组合                                                   | 功能                     | 说明               |      |<br>| ———————————————————— | ———————— | —————— | —- |<br>| Open a new window                                            | ⌘ + n                    | 新开窗口           |      |<br>| Open a new window in Incognito mode                          | ⌘ + Shift + n            | 新建窗口匿名模式   |      |<br>| Open a new tab, and jump to it                               | ⌘ + t                    | 进入新建标签       |      |<br>| Reopen the last closed tab, and jump to it                   | ⌘ + Shift + t            | 进入上次关闭标签   |      |<br>| Jump to the next open tab                                    | ⌘ + Option + Right arrow | 标签切换向后       |      |<br>| Jump to the previous open tab                                | ⌘ + Option + Left arrow  | 标签切换向前       |      |<br>| Jump to a specific tab                                       | ⌘ + 1 through ⌘ + 8      | 进入指定标签       |      |<br>| Jump to the last tab                                         | ⌘ + 9                    | 进入最后一个标签   |      |<br>| Open the previous page in your browsing history for the current tab | ⌘ + [ or ⌘ + Left arrow  | 向前               |      |<br>| Open the next page in your browsing history for the current tab | ⌘ + ] or ⌘ + Right arrow | 向后               |      |<br>| Closes the current tab or pop-up                             | ⌘ + w                    | 关闭标签或弹出     |      |<br>| Closes the current window                                    | ⌘ + Shift + w            | 关闭当前窗口       |      |<br>| Minimize the window                                          | ⌘ + m                    | 最小化Chrome       |      |<br>| Hide Google Chrome                                           | ⌘ + h                    | 隐藏               |      |<br>| Quit Google Chrome                                           | ⌘ + q                    | 关闭所有Chrome窗口 |      |</p>
+<p>####Google Chrome feature shortcuts工具快捷键<br>| 功能                                               | 快捷键组合         | 说明           |      |<br>| ————————————————– | —————— | ————– | —- |<br>| Show or hide the Bookmarks Bar                     | ⌘ + Shift + b      | 显示隐藏书签   |      |<br>| Open the Bookmark Manager                          | ⌘ + Option + b     | 书签栏管理     |      |<br>| Open the Settings page in a new tab                | ⌘ + ,              | 打开设置页面   |      |<br>| Open the History page in a new tab                 | ⌘ + y              | 打开历史页面   |      |<br>| Open the Downloads page in a new tab               | ⌘ + Shift + j      | 打开下载页面   |      |<br>| Open the Find Bar to search the current page       | ⌘ + f              | 当前查找       |      |<br>| Jump to the next match to your Find Bar search     | ⌘ + g              | 查找下一个     |      |<br>| Jump to the previous match to your Find Bar search | ⌘ + Shift + g      | 想找前一个     |      |<br>| When Find Bar is open, search for selected text    | ⌘ + e              | 查找选中字段   |      |<br>| Open Developer Tools                               | ⌘ + Option + i     | 打开开发者工具 |      |<br>| Open the Clear Browsing Data options               | ⌘ + Shift + Delete | 清除记录       |      |<br>| Log in as a different user or browse as a Guest    | ⌘ + Shift + m      | 登录           |      |</p>
+<p>####Address bar shortcuts<br>| 功能                    | 快捷键组合 | 说明         |      |<br>| ———————– | ———- | ———— | —- |<br>| Jump to the Address Bar | ⌘ + l      | 跳转到地址栏 |      |</p>
+<p>###Webpage shortcuts<br>| 功能                                                       | 快捷键组合            | 说明                   |      |<br>| ———————————————————- | ——————— | ———————- | —- |<br>| Open options to print the current page                     | ⌘ + p                 | 打印                   |      |<br>| Open options to save the current page                      | ⌘ + s                 | 保存                   |      |<br>| Reload your current page            ⌘ + r                  | 重新加载              |                        |      |<br>| Reload your current page, ignoring cached content          | ⌘ + Shift + r         | 忽略缓存重新加载       |      |<br>| Stop the page loading                                      | Esc                   | 停止加载               |      |<br>| Browse clickable items moving forward                      | Tab                   | 切换                   |      |<br>| Browse clickable items moving backward                     | Shift + Tab           | 向后切换               |      |<br>| Open a file from your computer in Google Chrome            | ⌘ + o + Select a file | 浏览器打开             |      |<br>| Display non-editable HTML source code for the current page | ⌘ + Option + u        | 显示源码               |      |<br>| Open the JavaScript Console                                | ⌘ + Option + j        | 打开脚本编辑器         |      |<br>| Save your current webpage as a bookmark                    | ⌘ + d                 | 保存为书签             |      |<br>| Save all open tabs as bookmarks in a new folder            | ⌘ + Shift + d         | 保存所有打开页面为书签 |      |<br>| Turn full-screen mode on or off                            | ⌘ + Ctrl + f          | 全屏                   |      |<br>| Make everything on the page bigger                         | ⌘ and +               | 放大                   |      |<br>| Make everything on the page smaller                        | ⌘ and -               | 缩小                   |      |<br>| Return everything on the page to the default size          | ⌘ + 0                 | 还原                   |      |<br>| Scroll down a webpage, a screen at a time                  | Space                 | 向下                   |      |<br>| Scroll up a webpage, a screen at a time                    | Shift + Space         | 向上                   |      |<br>| Search the web                                             | ⌘ + Option + f        | 搜索                   |      |<br>| Open your home page in the current tab                     | ⌘ + Shift + h         | 打开首页               |      |</p>
+<p>##Vimnum<br>作为Chrome的强大快捷器插件，实现快速浏览访问</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/4767765-f7b06159d95572d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2017-03-22 at 15.13.40.png"></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/Chrom-Vimium实现全键盘操作/" data-id="cjsx0po5p000312tp6yiqms39" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-使用protobuf统一创建项目类" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/使用protobuf统一创建项目类/">使用protobuf统一创建项目类</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/使用protobuf统一创建项目类/" class="article-date"><time datetime="2019-03-06T09:34:52.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在项目开发中我们往往需要进行模型设计，为一个对象配置多个属性，以前的方法前后端都需要分别进行设置，往往还容易出错，重复编写，实际上谷歌早就提供了一套成熟可行的方法可以统一开发中的模型，那就是：<br><a href="https://developers.google.com/protocol-buffers/docs/proto?hl=zh-cn" target="_blank" rel="noopener">Protobuf</a></p>
+<p>先在Github下载<a href="https://github.com/protocolbuffers/protobuf" target="_blank" rel="noopener">源代码</a><br>下载后通过命令行进行安装：</p>
+<pre><code>1 $ ./autogen.sh
+ 2 $ ./configure
+ 3 $ make
+ 4 $ make check
+ 5 $ sudo make install
+</code></pre><p>安装耗时较多，完成最后一步后可以看到命令行中多了protoc这个命令，主要的作用是把proto源文件转化为目标文件（包括Java\python\oc\go）中的类型定义文件。<br>主要命令示例：</p>
+<pre><code>//DIR为路径
+protoc --proto_path=$DIR --objc_out=$DIR  Define.proto
+
+ --cpp_out=OUT_DIR           Generate C++ header and source.
+ --csharp_out=OUT_DIR        Generate C# source file.
+ --java_out=OUT_DIR          Generate Java source file.
+ --js_out=OUT_DIR            Generate JavaScript source.
+ --objc_out=OUT_DIR          Generate Objective C header and source.
+ --php_out=OUT_DIR           Generate PHP source file.
+ --python_out=OUT_DIR        Generate Python source file.
+ --ruby_out=OUT_DIR          Generate Ruby source file.
+</code></pre><p>以OC为例，转换成功后会生成.h和.m文件，把生成后的放入项目中，在项目Pod中引入：<br>  pod ‘Protobuf’, ‘~&gt; 3.4.0’</p>
+<p>如果手动加入需要添加:-fno-objc-arc  因为该类不支<a href="https://blog.csdn.net/u010019717/article/details/44830601持ARC" target="_blank" rel="noopener">https://blog.csdn.net/u010019717/article/details/44830601持ARC</a><br>配置好会在项目中就可以直接使用该类了，特别方便。</p>
+<p>关于proto书写格式</p>
+<pre><code>syntax = &quot;proto2&quot;;
+
+package XHR.Group;
+import &quot;XHR.BaseDefine.proto&quot;;
+option optimize_for = LITE_RUNTIME;
+
+// CID_GROUP_REQ_GROUP_LIST             0x0301      获取群列表
+message XHRGroupListReq{
+        required string uid = 1;
+        required uint64 latest_update_time = 2;
+}
+
+// CID_GROUP_RSP_GROUP_LIST             0x0302   
+message XHRGroupListRsp{
+        required XHR.BaseDefine.ResultType result_code = 1;
+    required string result_string = 2;
+    required string uid = 3;
+    repeated XHR.BaseDefine.GroupInfo group_list = 4;
+    required uint64 latest_update_time = 5;
+}
+</code></pre><p>参考文章：<br><a href="https://blog.csdn.net/u010019717/article/details/44830573" target="_blank" rel="noopener">Protocol Buffers(Protobuf)开发者指南—概览</a><br><a href="https://blog.csdn.net/u011518120/article/details/54604615#JSONMapping" target="_blank" rel="noopener">Protobuf3语言指南</a><br> <a href="https://www.cnblogs.com/NeilZhang/p/8410589.html" target="_blank" rel="noopener">Protobuf 从入门到实战</a></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/使用protobuf统一创建项目类/" data-id="cjsx0po6h001112tp7qnrki46" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-vim操作" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/vim操作/">vim操作</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/vim操作/" class="article-date"><time datetime="2019-03-06T09:31:28.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###命令模式<br>光标移动            hjkl<br>移动到当前行首    ++    0    ^(非空首部)<br>移动到上行首        —<br>移动到下行首        Enter<br>移动到文章首        gg<br>移动到文章未        G</p>
+<p>向上翻页            Control + b<br>向下翻页            Control + f<br>屏幕非空首        H<br>屏幕非空尾        L<br>屏幕中间非空        M</p>
+<p>移至次一个单词首    w    W(忽略标点)<br>移至次一个单词尾    e    E<br>移至前一个单词首    b    B</p>
+<p>设置行号            set number<br>跳转到指定行        :n    nG</p>
+<p>句首                (<br>句尾                ）<br>段首                {<br>段尾                ]<br>在括号上匹配        %</p>
+<p>输入模式：<br>在单词首输入        i    insert<br>在行首输入        I<br>在单词尾输入        a    append<br>在行尾输入        A<br>在后插入一行输入    o    open<br>在前插入一行输入    O<br>连接后一行        J    Joint</p>
+<p>删除命令<br>删除单行            dd<br>删除游标所在字元    x<br>删除游标所在前字元 X<br>删除至文章首        dgg<br>删除至文章尾        dG<br>删除至段尾        d$<br>删除至行首        d0 d^(包含游标字元)</p>
+<p>替换命令<br>r                替换当前游标字<br>R                进入替换模式Esc返回<br>s                插入式替换内容<br>cc                替换当前行<br>c0,c^            替换到行首<br>c$                替换到行尾<br>cw                替换英文字母<br>u                返回上一步<br>U                回复当前行操作<br>Control + r        向前一步</p>
+<p>数目操作命令<br>5dd                删除5行<br>8yy                复制8行<br>3r                重复3次输入字元<br>3x                删除3字元<br>5J                连接5行<br>2i hello ESC        重复两次hello<br>6G  :6            跳转到第6行</p>
+<p>复制命令<br>yy                复制当行<br>2yy                复制两行<br>yw                复制word<br>y2w                复制两个字元<br>y0    y^            复制到行首<br>y$                复制到行尾<br>yG                复制到文尾<br>ygg                复制到文首<br>P                粘贴在游标前<br>p                粘贴游标后<br>Ayy                复制a缓存区    </p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/vim操作/" data-id="cjsx0po6g001012tpbwfm699p" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-homeBrew" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/homeBrew/">homeBrew</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/homeBrew/" class="article-date"><time datetime="2019-03-06T09:31:14.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/homeBrew/" data-id="cjsx0po6b000q12tpc8lee8fm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-RVM管理Ruby" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/RVM管理Ruby/">RVM管理Ruby</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/RVM管理Ruby/" class="article-date"><time datetime="2019-03-06T09:31:03.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: RVM管理Ruby<br>date: 2017-03-20 16:03:50</p>
+<h2 id="tags-命令"><a href="#tags-命令" class="headerlink" title="tags: 命令"></a>tags: 命令</h2><p>###安装RVM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+<p>###使用rvm管理Ruby </p>
+<p>列出已知的 Ruby 版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm list known</span><br></pre></td></tr></table></figure>
+<p>安装一个 Ruby 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install 2.2.0 --disable-binary</span><br></pre></td></tr></table></figure>
+<p>这里安装了最新的 2.2.0, rvm list known 列表里面的都可以拿来安装。<br>切换 Ruby 版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 2.2.0</span><br></pre></td></tr></table></figure>
+<p>如果想设置为默认版本，这样一来以后新打开的控制台默认的 Ruby 就是这个版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 2.2.0 --default</span><br></pre></td></tr></table></figure>
+<p>查询已经安装的ruby<br>rvm list<br>卸载一个已安装版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm remove 1.8.7</span><br></pre></td></tr></table></figure>
+<p>###gemset 的使用<br>RVM 不仅可以提供一个多 Ruby 版本共存的环境，还可以根据项目管理不同的 gemset.<br>gemset 可以理解为是一个独立的虚拟 Gem 环境，每一个 gemset 都是相互独立的。<br>比如你有两个项目，一个是 Rails 2.3 一个是 rails3. gemset 可以帮你便捷的建立两套 Gem 开发环境，并且方便的切换。<br>gemset 是附加在 Ruby 语言版本下面的，例如你用了 1.9.2, 建立了一个叫 rails3 的 gemset,当切换到 1.8.7 的时候，rails3 这个 gemset 并不存在。<br>建立 gemset  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.8.7  </span><br><span class="line">rvm gemset create rails23</span><br></pre></td></tr></table></figure>
+<p>然后可以设定已建立的 gemset 做为当前环境<br>use 可以用来切换语言或者 gemset<br>前提是他们已经被安装(或者建立)。并可以在 list 命令中看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.8.7</span><br><span class="line">rvm use 1.8.7@rails23</span><br></pre></td></tr></table></figure>
+<p>然后所有安装的 Gem 都是安装在这个 gemset 之下。<br>列出当前 Ruby 的 gemset</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset list</span><br></pre></td></tr></table></figure>
+<p>清空 gemset 中的 Gem<br>如果你想清空一个 gemset 的所有 Gem, 想重新安装所有 Gem，可以这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset empty 1.8.7@rails23</span><br></pre></td></tr></table></figure>
+<p>删除一个 gemset</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset delete rails2-3</span><br></pre></td></tr></table></figure>
+<p>项目自动加载 gemset<br>RVM 还可以自动加载 gemset。 例如我们有一个 Rails 3.1.3 项目，需要 1.9.3 版本 Ruby，整个流程可以这样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rvm install 1.9.3</span><br><span class="line">rvm use 1.9.3</span><br><span class="line">rvm gemset create rails313</span><br><span class="line">rvm use 1.9.3@rails313</span><br></pre></td></tr></table></figure>
+<p>下面进入到项目目录，建立一个 .rvmrc 文件。<br>在这个文件里可以很简单的加一个命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.9.3@rails313</span><br></pre></td></tr></table></figure>
+<p>然后无论你当前 Ruby 设置是什么，cd 到这个项目的时候，RVM 会帮你加载 Ruby 1.9.3 和 rails313 gemset.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/RVM管理Ruby/" data-id="cjsx0po63000b12tpoavnz595" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-常用快捷键" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/常用快捷键/">Mac常用快捷键</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/常用快捷键/" class="article-date"><time datetime="2019-03-06T09:30:42.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###通用命令<br>Command + F            搜索<br>Command + ,            属性<br>Command + 方向        切换<br>Command + W            关闭<br>Command + O            打开<br>Command + A            全选<br>Command + S            保存<br>Command + C            剪切<br>Command + V            粘贴<br>Command + T            打开新标签<br>Command + Delete        删除<br>Command + Control + F    进入全屏框</p>
+<p>###finder常用快捷键<br>Command + shift + N    新建文件夹<br>Command + N            打开文件夹<br>Command + L            查看信息<br>Command + delete        删除文件夹<br>Command + O            打开文件<br>Command + T            页内新开界面<br>Command + L            创建快捷方式<br>Command + ,            打开偏好设置<br>Command + H            隐藏当前Finder<br>Command + Shift + H    隐藏其它Finder<br>Command + W            关闭当前文件夹<br>Command + F            查找文件<br>Command + J            图标调整<br>Command + D            复制<br>Command + `            Finder切换<br>Command +    +            放大<br>Command + -            缩小<br>快速跳转：<br><img src="/2019/03/06/常用快捷键/6.png" alt=""></p>
+<p>###Iterm常用快捷键<br><img src="/2019/03/06/常用快捷键/7.png" alt=""><br>Command + D            分屏横<br>Command + Shift + D    分屏竖<br>Command + N            新建窗口<br>Option  + Command + E 浏览所有窗口<br>Option + Command + Number  切换窗口</p>
+<p>###MacDown快捷键<br>Control + Command + F    全屏<br>Shift + Command + S        另存为<br>Control + Command + Space     表情输入<br>Control + Command + F    进入全屏<br>Command +    M                放大缩小  </p>
+<p>###Alfred常用操作命令<br>系统命令<br>ScreeenSaver<br>trash                         垃圾箱<br>emptytrash                 清空回收站<br>logout<br>sleep<br>sleepdisplays                关闭屏幕<br>lock<br>restart<br>shutdown<br>quit                         关闭某应用<br>forcequit                 强行关闭<br>quitall</p>
+<p>###Chrome<br>Command + Shift + Delete     清除浏览记录<br>Command + Shift + N              匿名浏览<br>Command + Shift + T            重新打开关闭标签<br>Command + Number             进行标签切换<br>Command + Control + F        进入全屏<br>Command + Option + F        浏览器搜索<br>Command + Shift + H            首页<br>Command + Shift + J            进入下载页面<br>Command + ]                    前进<br>Command + [                    后退<br>Command + D                    添加书签<br>Command + Option + B        书签管理器<br>Command + Shift + 左右        书签移动<br>Command + Shift + W            关闭窗口  </p>
+<p>###Note<br>Command + Shift + L            添加列表<br>Command + Shift + A            添加文件<br>Command + L                    添加链接<br>Command + Shift + N            新建文件夹<br>Command + Shift + Option + V    匹配样式粘贴<br>Command + 1                    显示附件浏览器<br>Command + Shift + T            标题样式<br>Command + Shift + H            小标题<br>Command + Shift + B            正文  </p>
+<p>###Xcode<br>Command + T                    新建标签<br>Command + W                    关闭标签<br>Command + Control + W            关闭当前<br>Command + N                    新建文件<br>Command + Shift + N            新建工程  </p>
+<p>Command + Shift + F            全局搜索<br>Control + 1,2,3,4,5                导航栏不同极切换<br>Command + 1,2,3,4,5,6            工具导航切换<br>Command + 0                    隐藏工具导航器<br>Command + Option + 1,2,3,4        左边工具栏切换<br>Command + Option + Control        左边下部工具切换<br>Command + Option + 0            隐藏工具面板<br>Control     + 6                    当前文件类跳转<br>Command + Shift + J            快速定位到当前文档导航区<br>Command + Shift + Open        快速打开项目文件<br>Command + Control + Arrow        前后切换，.h.m切换  </p>
+<p>Command + B                    编译<br>Command + R                    运行<br>Command + .                    停止<br>F6                            单步<br>F7                            跳入<br>F8                            继续  </p>
+<p>Command + L                    跳转行<br>Command + Shift + K            清除工程  </p>
+<p>Command + Option + =            更新约束<br>Command + Option + []            上下移动代码<br>Command + Option + &lt;&gt;        隐藏展开代码<br>Command + Control + E            全局修改代码<br>Command + Shift + Y            打开控件台  </p>
+<p>Command + up/down            跳转到头或尾<br>Command + delete                删除光标所在行前代码<br>Option     + delete                删除光标前一个单词<br>Command + left/right            移动光标到行前或行尾  </p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/常用快捷键/" data-id="cjsx0po6i001412tpafb9t09x" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Jenv管理Java" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/Jenv管理Java/">Jenv管理Java</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/Jenv管理Java/" class="article-date"><time datetime="2019-03-06T09:30:12.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是Jenv：<a href="http://jenv.io/" target="_blank" rel="noopener">http://jenv.io/</a><br>jenv is Java environment manager, and it is a clone of RVM for Java. jenv can manage parallel versions of Java development kits on any Unix based system. It provides a convenient command line interface for installing, switching, removing and listing Candidates.</p>
+<p>也就是各类JAVA环境的安装配置，如果手工去作是一件很麻烦的事情，但是有了这个工具后，简单命令即可实现快速配置。</p>
+<p>Why jenv？</p>
+<ul>
+<li>Easy to manage Java version, such as 1.6, 1.7, 1.8 and 1.9</li>
+<li>Easy to install Java tools, such as Ant, Maven, Tomcat etc.</li>
+<li>Easy to manage candidate’s version such as install new version or uninstall the old one.</li>
+<li>Directory is standard, and friendly to IDE</li>
+<li>Easy to extend. You can setup your own jenv on your company to manage development environment.</li>
+<li>Easy to backup your env.</li>
+<li>Bash completion support. Use TAB to complete command name, candidate name and version.<br>为什么使用呢？很清楚<br>方便切换JDK环境，方便安装各类Java工具<br>方便更新包管理，界面友好、方便拓展备份、自动命令行补充等等</li>
+</ul>
+<p>下载步骤：<br>$ curl -L -s get.jenv.io | bash</p>
+<p>$ mkdir -p $HOME/.jenv/candidates/java</p>
+<p>配置Java环境：<br>从官网下载各类JAVA的JDK：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br>安装后添加链接：<br>ln -s /Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home ~/.jenv/candidates/java/1.8.0_151<br>启用该环境<br>Jenv default java 1.8.0_151 即可</p>
+<p>安装第三方如Maven<br>$ jenv list maven<br>Final install the candidate with the version:<br>$ jenv install maven 3.3.9<br>In your terminal, input mvn –version to check the installation.</p>
+<p>通过jenv -h可以知道很多常用的命令<br>可以使用jenv all查看所有支持的第三方</p>
+<p>灵活的安装方式<br>Install candidates in other ways<br>Install from local folder:<br>$ jenv install java 1.8.0_71 /user/local/jdk-1.8.0_71<br>Install from git repository:<br> ​$ jenv install spike 0.0.1 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:linux-china/groovy_scripts.git</p>
+<p>方便的更新<br>How to sync candidates information with the repository<br>jenv stores the repository information with offline mode, please use following command to update repository information.<br>$ jenv repo update</p>
+<p>How to update jenv<br>Please use selfupdate command to get last version.<br>$ jenv selfupdate</p>
+<p>jenvrc support<br>jenvrc is jenv setup file which contains candidate and the version as following:<br>java=1.8.0_71<br>maven=3.3.9<br>After you enter this directory, jenv will setup environment automatically.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/Jenv管理Java/" data-id="cjsx0po5n000212tposaoxyqg" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git操作" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/git操作/">git操作</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/git操作/" class="article-date"><time datetime="2019-03-06T09:29:56.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#重要性说明<br>Git作为目前项目版本管理的工具，其先进性和便捷性不言而喻，所以一定要深入掌握才行，这样对以后的管理非常方便。主要实现的功能</p>
+<ul>
+<li>个人或团队开发项目管理</li>
+<li>项目版本恢复或指定版本打包</li>
+<li>最近才经历过的用cocopod打包自己的插件作为私有库要用到tag标记版本号</li>
+<li>目前Jenkins通过git源代码提取来进行打包</li>
+<li>iOS个人开发的各种第三方库的引入</li>
+</ul>
+<p>#重要性补充说明</p>
+<ul>
+<li>使用码云进行私有库管理，可以创建组织和公司</li>
+<li>复制Github上优秀的项目</li>
+<li>公司GitLab项目维护管理</li>
+</ul>
+<p>#Git的通用操作</p>
+<p>##Git工具命令安装下载</p>
+<pre><code>brew install git //Mac安装    
+yum install git-core//CentOS
+apt-get install git//Ubuntu
+</code></pre><p>##Git克隆Git库的办法是</p>
+<pre><code>git clone &lt;#库地址&gt;     
+库地址包括有HTTPS的和SSH的
+ssh://diaoyu@120.40.160.80:2222/home/Product/fishing.git
+https://github.com/cooler112/Cooler
+</code></pre><p>##自建Git库</p>
+<pre><code>git init  &lt;仓库名称,以.git结尾规范&gt;
+git init -bare &lt;仓库名称&gt; //创建裸仓库，没有工作区间，防止有人登录服务器去改文件
+</code></pre><p>##忽略提交的部分文件</p>
+<pre><code>##以JAVA项目为例
+target/
+!.mvn/wrapper/maven-wrapper.jar
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+</code></pre><p><strong><em>以下为忽略规则</em></strong></p>
+<pre><code># 此为注释 – 将被 Git 忽略
+# 忽略所有 .a 结尾的文件
+*.a
+# 但 lib.a 除外
+!lib.a
+# 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+/TODO
+# 忽略 build/ 目录下的所有文件
+build/
+# 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+doc/*.txt
+# 忽略 doc/ 目录下所有扩展名为 txt 的文件
+doc/**/*.txt
+</code></pre><p>##从拷贝到提交单人简单操作</p>
+<pre><code>git add *  git add *  添加到缓存区
+git commit -m “”  提交
+git remote add origin &lt;仓库名称&gt;
+git push --set-upstream origin master  //直接提交到远程仓库或
+git push -u origin master //功能同上
+</code></pre><p>##撤消功能的使用：reset,checkout,–amend</p>
+<pre><code>##已经commit 添加备注后发现还需要更改，更改完成后调用可以修改备注内容，push时只算作一次
+git commit —amend
+##将Add的文件从暂存区撤回到工作区
+git reset filename
+##将工作区的文件恢复到初始状态
+git checkout filename
+##回恢到某次提交
+git reset --hard ******//操作之前先处理好未提交文件
+git fsck --lost-found //在.git/lost-found找到只添加未提交的文件集
+git reflog//查看提交记录
+</code></pre><p>##远端仓库的操作git remote<br>    git remote //列出所有<br>    git remote show &lt;分支名&gt;//查看状态<br>    git remote add &lt;分支名称&gt;  &lt;分支地址&gt;<br>    git remove rename //改名，本地也会一一对应<br>    git remote rm &lt;分支名&gt;  //某个分支不再维护或不再贡献<br>    git pull   &lt;分支名,默认master&gt;//自动合并远端与目前的对应分支</p>
+<p>  ##标签操作<br>标签是在commit 过后才进行的操作，在提交的时候需要指定分支和标签号才后有作用，标签相当于某一提交操作的快照</p>
+<pre><code>git tag //简单标签
+git tag -a &quot;0.0.1&quot; -m &quot; &lt;标签内容&gt;
+git tag -a 0.0.1 &lt;某次提交编号&gt;
+git push origin 0.0.1  //标签生效
+</code></pre><p> ##分支操作<br>分支主要用于开发新版本而保证正式版本不受干扰或者Bug修复，主要操作是合并,在分支合并前清空暂存区</p>
+<pre><code>git branch //查看所有，-v 查看详情 --merged 查看合并分支 --unmerged查看未合并
+git branch &lt;新分支名&gt;
+git checkout &lt;分支名&gt;切换分支
+git checkout -b &lt;新分支名&gt;//分支并切换
+git merge &lt;分支名&gt;//进行合并 
+git branch -d //删除分支
+git checkout -b awesomeBranch origin/awesomebranch   //将远程分支拷贝到本地新建分支
+git checkout --track origin/awesomebranch//同上
+</code></pre><p>   git push origin :awesomebranch//删除远程分支，比如已经合并到master   </p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/git操作/" data-id="cjsx0po66000f12tpkd93849y" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-成为更好的程序员要做到的10个方法" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/成为更好的程序员要做到的10个方法/">成为更好的程序员要做到的10个方法</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/成为更好的程序员要做到的10个方法/" class="article-date"><time datetime="2019-03-06T07:48:15.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/2019/03/06/成为更好的程序员要做到的10个方法/1.png" title="image">
+<p>优秀程序员要做到的10件事情：</p>
+<p>1、看别人的代码</p>
+<p>2、让别人看你的代码</p>
+<p>3、写新代码之前解决遗留的问题</p>
+<p>4、学习新技术</p>
+<p>5、保持简洁</p>
+<p>6、以写博客的方式讲述你做的项目、写的代码、学到的东西</p>
+<p>7、对开源作出贡献</p>
+<p>8、修下它，而不是用暴力</p>
+<p>9、增加代码%1的覆盖率（说的是重用吗）</p>
+<p>10、经常活动不要一直坐着</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/成为更好的程序员要做到的10个方法/" data-id="cjsx0po6j001612tp01qw1xnr" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程思想/">编程思想</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="外文推荐：the-Skills" class="article article-type-外文推荐：the" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/Skills/">Skills</a>
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/Skills/" class="article-date"><time datetime="2019-03-06T07:47:39.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/Skills/" data-id="cjsx0po65000d12tp0t0zpsy1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <div id="page-nav">
+    <nav><ul class="pagination"><li><a class="page-prev" rel="prev" href="/"><i class="fa fa-chevron-left"></i> Prev</a></li><li><a class="page-number" href="/">1</a></li><li class="active"><span class="page-number">2</span></li><li><a class="page-number" href="/page/3/">3</a></li><li><a class="page-number" href="/page/4/">4</a></li><li><a class="page-next" rel="next" href="/page/3/">Next <i class="fa fa-chevron-right"></i></a></li></ul></nav>
+  </div>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

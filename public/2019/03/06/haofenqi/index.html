@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>好分期 | ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="好分期后台管理iOS端维护要点总结： 项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下 好分期后台管理iOS端开发总结：标准化开发，明确你每句代码的意图 在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也">
+<meta name="keywords" content="项目经历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好分期">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/haofenqi/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="好分期后台管理iOS端维护要点总结： 项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下 好分期后台管理iOS端开发总结：标准化开发，明确你每句代码的意图 在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/03/06/haofenqi/1.png">
+<meta property="og:updated_time" content="2019-03-06T07:42:58.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="好分期">
+<meta name="twitter:description" content="好分期后台管理iOS端维护要点总结： 项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下 好分期后台管理iOS端开发总结：标准化开发，明确你每句代码的意图 在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/06/haofenqi/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-haofenqi" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      好分期
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/haofenqi/" class="article-date"><time datetime="2019-03-06T07:25:30.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="好分期后台管理iOS端维护要点总结："><a href="#好分期后台管理iOS端维护要点总结：" class="headerlink" title="好分期后台管理iOS端维护要点总结："></a>好分期后台管理iOS端维护要点总结：</h1><img src="/2019/03/06/haofenqi/1.png">
+<p>项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下</p>
+<p>好分期后台管理iOS端开发总结：<br><strong>标准化开发，明确你每句代码的意图</strong></p>
+<p>在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也不一定是每句代码都 要说明 点什么，除非你是新手第一次接手项目。另外发现几个稍微有点欠妥的地方，一是把网络请求接口直接写在项目代码里面不分层虽然方便了，但是后台如果要统一改接口名称 要一个个去找，不是很方便 。二是搜索这个控件在取消的时候并没进行重新请求（已经修改）。界面全部采用TableView作为基础在Cell上布局控件，这种做法让我耳目一新，但是模块化的效果好很明显。不过重复控件太多，有些可以通过Cell重用实现的。还有就是在加载的时候如果网络出现问题，用户只能等待，这样的体验不是很好，这点也是我以后写代码要注意的地方。这款App主要的功能作用是显示数据，复杂的计算和操作后台都处理好了，所以项目并不算大。维护起来也很轻松</p>
+<p><strong>键盘弹出界面自动移动防止遮挡</strong></p>
+<pre><code>///IQKeyboardManager:自动处理键盘事件的第三方库
+
+​    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+
+​    manager.enable = YES;//控制整个功能是否启用
+
+​    manager.shouldResignOnTouchOutside = YES;//控制点击背景是否收起键盘
+
+​    manager.shouldToolbarUsesTextFieldTintColor = YES;//控制键盘上的工具条文字颜色是否用户自定义
+
+​    manager.enableAutoToolbar = NO;//控制是否显示键盘上的工具条
+
+​    manager.preventShowingBottomBlankSpace = NO;//防止IQKeyboardManager让rootview上滑过度,默认是YES
+</code></pre><p><strong>IPS**</strong>不用第三方可以手动进行采取上传到服务器，用于点对点推送：** </p>
+<p>  //注册UserNotification,以获取推送通知的权限</p>
+<pre><code>​    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
+
+​    [application registerUserNotificationSettings:settings];
+
+​    //注册远程推送
+
+​    [application registerForRemoteNotifications];
+
+​    
+
+​    // Override point for customization after application launch.
+
+​    return YES;
+
+}
+
+– (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {//处理推送消息
+
+​    NSLog(@”userinfo：%@”, userInfo);
+
+​    NSLog(@”收到推送消息：%@”, [[userInfo objectForKey:@”aps”] objectForKey:@”alert”]);
+
+}
+
+///如果注册失败，比如没有证书等等调用
+
+– (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+
+​    NSLog(@”远程通知注册失败：%@”, error);
+
+}
+
+///用户同意后，会调用此程序，获取系统的deviceToken，应把deviceToken传给服务器保存，此函数会在程序每次启动时调用(前提是用户允许通知)
+
+– (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+​    //NSLog(@”获取到的Token值为：%@”, deviceToken);
+
+​    [Defaults setObject:deviceToken forKey:@”deviceToken”];//Token值，用于登录的时候向后台发送用户对应的设备，方便针对进行推送
+
+    }    
+</code></pre><p><strong>强制更新模块：本地调用 版本号与服务器返回版本号对比大小进行控制</strong> </p>
+<pre><code>    – (void)versionUpdate:(double)versionInfo {
+
+    ​    ///系统版本更新
+
+    ​    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+
+    ​    NSString *app_Version = [infoDictionary objectForKey:@”CFBundleShortVersionString”];//app版本
+
+    ​    
+
+    ​    if (versionInfo &gt; [app_Version doubleValue]) {
+
+    ​        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@”提示” message:@”有新版本请立即更新” preferredStyle:UIAlertControllerStyleAlert];
+
+    ​        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@”立即更新” style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+    ​            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@”https://www.pgyer.com/obUA”]];
+
+    ​        }];
+
+    ​        [alert addAction:firstAction];
+
+    ​        [self presentViewController:alert animated:YES completion:nil];
+
+​    }
+
+}
+</code></pre><p><strong>关于列表的动态添加或删除</strong></p>
+<p>对于TableView或CollectionView 的操作，从网络获取列表数据后，可以直接在本地列表进行操作，后台只需要返回成都或失败即可，没有必要去重新请求，刷新列表</p>
+<p><strong>将上传图片加入主线程队列进行，防止阻断，界面更新放到放线程进行</strong></p>
+<p>​        项目概况：主要为后台审核人员操作手机端操作，已经有人开发得差不多了，所以我的工作主要是维护，在维护中学到了些新东西，总结下</p>
+<p>好分期后台管理iOS端开发总结：<br><strong>标准化开发，明确你每句代码的意图</strong></p>
+<p>在前人做了详细备注的基础下，代码一看就懂，没有丝毫入坑的感觉，数据的收发非常的规范，而且后期的扩展相对轻松，不经感叹做好项目代码记录是规范化备注是多么重要的一件事情，不过也不一定是每句代码都 要说明 点什么，除非你是新手第一次接手项目。另外发现几个稍微有点欠妥的地方，一是把网络请求接口直接写在项目代码里面不分层虽然方便了，但是后台如果要统一改接口名称 要一个个去找，不是很方便 。二是搜索这个控件在取消的时候并没进行重新请求（已经修改）。界面全部采用TableView作为基础在Cell上布局控件，这种做法让我耳目一新，但是模块化的效果好很明显。不过重复控件太多，有些可以通过Cell重用实现的。还有就是在加载的时候如果网络出现问题，用户只能等待，这样的体验不是很好，这点也是我以后写代码要注意的地方。这款App主要的功能作用是显示数据，复杂的计算和操作后台都处理好了，所以项目并不算大。维护起来也很轻松</p>
+<p><strong>键盘弹出界面自动移动防止遮挡</strong></p>
+<pre><code>///IQKeyboardManager:自动处理键盘事件的第三方库
+
+​    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+
+​    manager.enable = YES;//控制整个功能是否启用
+
+​    manager.shouldResignOnTouchOutside = YES;//控制点击背景是否收起键盘
+
+​    manager.shouldToolbarUsesTextFieldTintColor = YES;//控制键盘上的工具条文字颜色是否用户自定义
+
+​    manager.enableAutoToolbar = NO;//控制是否显示键盘上的工具条
+
+​    manager.preventShowingBottomBlankSpace = NO;//防止IQKeyboardManager让rootview上滑过度,默认是YES
+</code></pre><p><strong>IPS**</strong>不用第三方可以手动进行采取上传到服务器，用于点对点推送：** </p>
+<pre><code>      //注册UserNotification,以获取推送通知的权限
+
+    ​    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
+
+    ​    [application registerUserNotificationSettings:settings];
+
+    ​    //注册远程推送
+
+    ​    [application registerForRemoteNotifications];
+
+    ​    
+
+    ​    // Override point for customization after application launch.
+
+    ​    return YES;
+
+    }
+
+    – (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {//处理推送消息
+
+    ​    NSLog(@”userinfo：%@”, userInfo);
+
+    ​    NSLog(@”收到推送消息：%@”, [[userInfo objectForKey:@”aps”] objectForKey:@”alert”]);
+
+    }
+
+    ///如果注册失败，比如没有证书等等调用
+
+    – (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+
+    ​    NSLog(@”远程通知注册失败：%@”, error);
+
+    }
+
+    ///用户同意后，会调用此程序，获取系统的deviceToken，应把deviceToken传给服务器保存，此函数会在程序每次启动时调用(前提是用户允许通知)
+
+    – (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    ​    //NSLog(@”获取到的Token值为：%@”, deviceToken);
+
+    ​    [Defaults setObject:deviceToken forKey:@”deviceToken”];//Token值，用于登录的时候向后台发送用户对应的设备，方便针对进行推送
+
+    }
+
+    **强制更新模块：本地调用 版本号与服务器返回版本号对比大小进行控制** 
+
+    – (void)versionUpdate:(double)versionInfo {
+
+    ​    ///系统版本更新
+
+    ​    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+
+    ​    NSString *app_Version = [infoDictionary objectForKey:@”CFBundleShortVersionString”];//app版本
+
+    ​    
+
+    ​    if (versionInfo &gt; [app_Version doubleValue]) {
+
+    ​        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@”提示” message:@”有新版本请立即更新” preferredStyle:UIAlertControllerStyleAlert];
+
+    ​        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@”立即更新” style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+    ​            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@”https://www.pgyer.com/obUA”]];
+
+    ​        }];
+
+    ​        [alert addAction:firstAction];
+
+    ​        [self presentViewController:alert animated:YES completion:nil];
+
+​    }
+
+}
+</code></pre><p><strong>关于列表的动态添加或删除</strong></p>
+<p>对于TableView或CollectionView 的操作，从网络获取列表数据后，可以直接在本地列表进行操作，后台只需要返回成都或失败即可，没有必要去重新请求，刷新列表</p>
+<p><strong>将上传图片加入主线程队列进行，防止阻断，界面更新放到放线程进行</strong></p>
+<pre><code>      dispatch_async(dispatch_get_global_queue(0, 0), ^{
+
+       队列操作。。。        
+
+    ​        [Service serviceWithJAVAUrl:@”” params:params images:imgArr message:@”” controller:self succeedBlock:^(id response) {
+
+    ​            dispatch_async(dispatch_get_main_queue(), ^{
+
+    ​             
+
+    ​            });
+
+    ​        } failBlock:^{
+
+    ​            dispatch_async(dispatch_get_main_queue(), ^{
+
+    ​            });
+
+    ​        }];
+
+    ​    });
+
+    带图片带参数AFNetworking上传:
+
+    \+ (void)serviceWithUrl:(NSString *)url
+
+    ​                params:(NSDictionary *)params
+
+    ​                images:(NSArray *)images
+
+    ​               message:(NSString *)message
+
+    ​            controller:(id)controller
+
+    ​          succeedBlock:(void (^) (id response))succeedBlock
+
+    ​             failBlock:(void (^) (void))failBlock
+
+    {
+
+    ​    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+    //设置可以接收的数据类型
+
+    ​    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@”application/json”, @”text/json”, @”text/javascript”, @”text/html”, nil];
+
+    //设置是否对发送数据进行Json格式化
+
+    ​      //manager.requestSerializer=[AFJSONRequestSerializer serializer];
+
+    //报头标记，只是作为双方识别的记号而已
+
+    ​    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@”RqPs” password:@“***********”];
+
+    ​    
+
+    ​    if (![message isEqualToString:@””]) {
+
+    ​        [SVProgressHUD showWithStatus:message maskType:SVProgressHUDMaskTypeBlack];
+
+    ​    }
+
+    ​    
+
+    ​    NSString *URL = [NSString stringWithFormat:@”%@%@”,BASEURL,url];
+
+    ​    [manager POST:URL parameters:params constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData) {
+
+    ​        //[SVProgressHUD dismiss];
+
+    ​        
+
+    ​        NSMutableArray *arr = [[NSMutableArray alloc] init];
+
+    ​        for (int i = 0; i &lt; images.count; i++) {
+
+    ​            NSDictionary *image = images[i];
+
+    ​            NSString *fileName = image.allKeys[0];
+
+    ​            int nameCount = 0;
+
+    ​            for (NSString *str in arr) {
+
+    ​                if ([str containsString:image.allKeys[0]]) {
+
+    ​                    nameCount++;
+
+    ​                    ///图片等比例压缩
+
+    ​                }
+
+    ​            }
+
+    ​            
+
+    ​            ///重名 添加后缀
+
+    ​            if (nameCount != 0) {
+
+    ​                fileName = [NSString stringWithFormat:@”%@%d”, image.allKeys[0], nameCount+1];
+
+    ​            }
+
+    ​            
+
+    ​            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+    ​            [formatter setDateFormat:@”yyyyMMddHHmmssSSS”];
+
+    ​            NSString *dateTime = [formatter stringFromDate:[NSDate date]];
+
+    ​            [arr addObject:[NSString stringWithFormat:@”%@_%@”, fileName, dateTime]];
+
+    ​        }
+
+    ​        
+
+    ​       for (int i = 0; i &lt; images.count; i++) {
+
+    ​           NSDictionary *image = images[i];
+
+    ​           [formData appendPartWithFileData: UIImageJPEGRepresentation(image.allValues[0], 0.0) name:arr[i] fileName:[arr[i] stringByAppendingFormat:@”.png”] mimeType:@”image/png”];
+
+    ​       }
+
+    ​        
+
+    ​    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+    ​        [SVProgressHUD dismiss];
+
+    ​        NSLog(@”%@”, responseObject);
+
+    ​        
+
+    ​        NSDictionary *result = responseObject;
+
+    ​        if (![[NSString stringWithFormat:@”%@”, result[@”Flag”]] isEqualToString:@”1″]) {
+
+    ​            [ExtensionMethod simpleAlertWithMessage:responseObject[@”Message”] controller:controller handler:^{
+
+    ​                if (failBlock == NULL) {
+
+    ​                    return;
+
+    ​                }
+
+    ​                failBlock();
+
+    ​            }];
+
+    ​            return;
+
+    ​        } else if (result == nil) {
+
+    ​            [ExtensionMethod simpleAlertWithMessage:@”后台服务异常，请稍后再试” controller:controller handler:nil];
+
+    ​            return;
+
+    ​        }
+
+    ​        
+
+    ​        succeedBlock(responseObject);
+
+    ​    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    ​        [SVProgressHUD dismiss];
+
+    ​        if (failBlock) {
+
+    ​            [ExtensionMethod simpleAlertWithMessage:@”网络异常，请稍后再试” controller:controller handler:^{
+
+    ​                if (failBlock == NULL) {
+
+    ​                    return;
+
+    ​                }
+
+​                failBlock();
+
+​            }];
+
+​        }
+
+​    }];
+
+}
+</code></pre><p>​    </p>
+<p>另外使用了比较好用的第三方控件：RMPickerViewController第三方选择器，UUID设备唯一标记方法</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/haofenqi/" data-id="cjsx0po6u001d12tp0k5h243p" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/项目经历/">项目经历</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/06/heidakeng/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">heidakeng</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/03/06/关于技术实验室网站的创建设想/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">关于技术实验室网站的创建设想</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
