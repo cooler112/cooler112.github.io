@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RVM管理Ruby | ITCooler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: RVM管理Rubydate: 2017-03-20 16:03:50 tags: 命令###安装RVM 12gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3\curl -sSL https://get.rvm.io | bash -s stable ##">
+<meta name="keywords" content="编程工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RVM管理Ruby">
+<meta property="og:url" content="http://yoursite.com/2019/03/06/RVM管理Ruby/index.html">
+<meta property="og:site_name" content="ITCooler">
+<meta property="og:description" content="title: RVM管理Rubydate: 2017-03-20 16:03:50 tags: 命令###安装RVM 12gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3\curl -sSL https://get.rvm.io | bash -s stable ##">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-06T09:33:18.955Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RVM管理Ruby">
+<meta name="twitter:description" content="title: RVM管理Rubydate: 2017-03-20 16:03:50 tags: 命令###安装RVM 12gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3\curl -sSL https://get.rvm.io | bash -s stable ##">
+  
+    <link rel="alternate" href="/atom.xml" title="ITCooler" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">ITCooler</h1>
+  
+    <p class="lead blog-description">做一个好玩有趣的技术达人</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-RVM管理Ruby" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      RVM管理Ruby
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/06/RVM管理Ruby/" class="article-date"><time datetime="2019-03-06T09:31:03.000Z" itemprop="datePublished">2019-03-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: RVM管理Ruby<br>date: 2017-03-20 16:03:50</p>
+<h2 id="tags-命令"><a href="#tags-命令" class="headerlink" title="tags: 命令"></a>tags: 命令</h2><p>###安装RVM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</span><br><span class="line">\curl -sSL https://get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+<p>###使用rvm管理Ruby </p>
+<p>列出已知的 Ruby 版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm list known</span><br></pre></td></tr></table></figure>
+<p>安装一个 Ruby 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm install 2.2.0 --disable-binary</span><br></pre></td></tr></table></figure>
+<p>这里安装了最新的 2.2.0, rvm list known 列表里面的都可以拿来安装。<br>切换 Ruby 版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 2.2.0</span><br></pre></td></tr></table></figure>
+<p>如果想设置为默认版本，这样一来以后新打开的控制台默认的 Ruby 就是这个版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 2.2.0 --default</span><br></pre></td></tr></table></figure>
+<p>查询已经安装的ruby<br>rvm list<br>卸载一个已安装版本  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm remove 1.8.7</span><br></pre></td></tr></table></figure>
+<p>###gemset 的使用<br>RVM 不仅可以提供一个多 Ruby 版本共存的环境，还可以根据项目管理不同的 gemset.<br>gemset 可以理解为是一个独立的虚拟 Gem 环境，每一个 gemset 都是相互独立的。<br>比如你有两个项目，一个是 Rails 2.3 一个是 rails3. gemset 可以帮你便捷的建立两套 Gem 开发环境，并且方便的切换。<br>gemset 是附加在 Ruby 语言版本下面的，例如你用了 1.9.2, 建立了一个叫 rails3 的 gemset,当切换到 1.8.7 的时候，rails3 这个 gemset 并不存在。<br>建立 gemset  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.8.7  </span><br><span class="line">rvm gemset create rails23</span><br></pre></td></tr></table></figure>
+<p>然后可以设定已建立的 gemset 做为当前环境<br>use 可以用来切换语言或者 gemset<br>前提是他们已经被安装(或者建立)。并可以在 list 命令中看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.8.7</span><br><span class="line">rvm use 1.8.7@rails23</span><br></pre></td></tr></table></figure>
+<p>然后所有安装的 Gem 都是安装在这个 gemset 之下。<br>列出当前 Ruby 的 gemset</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset list</span><br></pre></td></tr></table></figure>
+<p>清空 gemset 中的 Gem<br>如果你想清空一个 gemset 的所有 Gem, 想重新安装所有 Gem，可以这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset empty 1.8.7@rails23</span><br></pre></td></tr></table></figure>
+<p>删除一个 gemset</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm gemset delete rails2-3</span><br></pre></td></tr></table></figure>
+<p>项目自动加载 gemset<br>RVM 还可以自动加载 gemset。 例如我们有一个 Rails 3.1.3 项目，需要 1.9.3 版本 Ruby，整个流程可以这样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rvm install 1.9.3</span><br><span class="line">rvm use 1.9.3</span><br><span class="line">rvm gemset create rails313</span><br><span class="line">rvm use 1.9.3@rails313</span><br></pre></td></tr></table></figure>
+<p>下面进入到项目目录，建立一个 .rvmrc 文件。<br>在这个文件里可以很简单的加一个命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 1.9.3@rails313</span><br></pre></td></tr></table></figure>
+<p>然后无论你当前 Ruby 设置是什么，cd 到这个项目的时候，RVM 会帮你加载 Ruby 1.9.3 和 rails313 gemset.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/06/RVM管理Ruby/" data-id="cjsx0po63000b12tpoavnz595" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程工具/">编程工具</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/03/06/常用快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Mac常用快捷键</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2019/03/06/homeBrew/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">homeBrew</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/iOS/">iOS</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/swift/">swift</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/创意软件/">创意软件</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程工具/">编程工具</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/编程思想/">编程思想</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/项目经历/">项目经历</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/创意软件/" style="font-size: 15px;">创意软件</a> <a href="/tags/编程工具/" style="font-size: 20px;">编程工具</a> <a href="/tags/编程思想/" style="font-size: 10px;">编程思想</a> <a href="/tags/项目经历/" style="font-size: 20px;">项目经历</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">30</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2019/03/06/Swift起步/">Swift起步</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS端本地sqlite批量插入对比/">iOS端本地sqlite批量插入对比</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/iOS再次打开推送总结/">iOS再次打开推送总结</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/APP中常用的混合加密/">APP中常用的混合加密</a>
+        </li>
+      
+        <li>
+          <a href="/2019/03/06/OC常用格式检查/">OC常用格式检查</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shawn Xiao<br>
+      蜀ICP备17017214号-1<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
