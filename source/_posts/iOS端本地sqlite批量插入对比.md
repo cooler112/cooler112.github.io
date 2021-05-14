@@ -2,6 +2,7 @@
 title: iOS端本地sqlite批量插入对比
 date: 2019-03-06 17:42:54
 tags: iOS
+categories: 苹果开发
 ---
 
 ###1、Sqlite优势明显

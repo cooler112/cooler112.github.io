@@ -1,7 +1,8 @@
 ---
 title: RVM管理Ruby
 date: 2019-03-06 17:31:03
-tags: 编程工具
+tags: rvm
+categories: 编程工具
 ---
 
 ---

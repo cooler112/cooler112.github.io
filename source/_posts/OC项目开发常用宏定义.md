@@ -1,15 +1,12 @@
 ---
 title: OC项目开发常用宏定义
 date: 2019-03-06 17:40:09
-tags: iOS
+tags: OC
+categories: 苹果开发
 ---
 
 ---
-title: OC项目开发常用宏定义
-date: 2017-02-25 15:40:37
 tags:
----
-
 ```
 #define WS(weakSelf)  __weak __typeof(self)weakSelf = self; //__typeof() 声明数据类型
 #define DEF [NSUserDefaults standardUserDefaults]

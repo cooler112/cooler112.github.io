@@ -1,7 +1,8 @@
 ---
 title: MVC的理解与运用总结
 date: 2019-03-06 17:39:59
-tags:
+tags: mvc
+categories: 设计架构
 ---
 
 

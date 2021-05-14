@@ -2,6 +2,7 @@
 title: Jenv管理Java
 date: 2019-03-06 17:30:12
 tags: 编程工具
+categories: 编程工具
 ---
 
 什么是Jenv：http://jenv.io/ 
@@ -49,7 +50,7 @@ Install candidates in other ways
 Install from local folder:
 $ jenv install java 1.8.0_71 /user/local/jdk-1.8.0_71
 Install from git repository:
- ​$ jenv install spike 0.0.1 git@github.com:linux-china/groovy_scripts.git
+ $ jenv install spike 0.0.1 git@github.com:linux-china/groovy_scripts.git
 
 方便的更新
 How to sync candidates information with the repository

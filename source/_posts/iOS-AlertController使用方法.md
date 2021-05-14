@@ -2,6 +2,7 @@
 title: iOS_AlertController使用方法
 date: 2019-03-06 17:39:50
 tags: iOS
+categories: 苹果开发
 ---
 
 ###UIAlertController是iOS8引入的新特性，可以使用它代替AlertView或ActionSheet，主要方法如下：

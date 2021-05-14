@@ -4,11 +4,11 @@
 
 # Site
 title: ITCooler
-subtitle: 做一个好玩有趣的技术达人
+subtitle: 斜杠编程，爱疯爱玩爱烧脑
 description: 本站仅用于技术交流个人总结
-keywords: IT,编程,疯狂,偏执,技术狂牛
+keywords: IT,编程,技术,思维归纳
 author: Shawn Xiao
-language: 
+language: zh-CN
 timezone:
 
 # URL
@@ -73,9 +73,19 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: bootstrap-blog
+# theme: tranquilpeak
 # theme: Nlvi
+theme: maupassant-hexo
 # theme: hexo-theme-Claudia
+
+# Extensions
+plugins:
+    hexo-generator-feed
+#Feed Atom
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

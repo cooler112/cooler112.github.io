@@ -1,7 +1,8 @@
 ---
 title: 好分期
 date: 2019-03-06 15:25:30
-tags: 项目经历
+tags: 项目
+categories: 编程思想
 ---
 
 

@@ -2,6 +2,7 @@
 title: iOS面试被问到的问题
 date: 2019-03-06 17:39:39
 tags: iOS
+categories: 苹果开发
 ---
 
 近期面试问答汇总

@@ -1,7 +1,8 @@
 ---
 title: vim操作
 date: 2019-03-06 17:31:28
-tags: 编程工具
+tags: vim
+categories: 编程工具
 ---
 
 ###命令模式

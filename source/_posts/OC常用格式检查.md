@@ -2,11 +2,9 @@
 title: OC常用格式检查
 date: 2019-03-06 17:40:22
 tags: iOS
+categories: 苹果开发
 ---
 
----
-title: OC常用格式检查
-date: 2017-03-01 16:16:14
 tags:
 ---
 要点：
